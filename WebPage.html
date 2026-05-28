@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html data-theme="airbnb-light">
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMS Enterprise Portal v3.6</title>
+  <style>
+/* THEMES */
+[data-theme="airbnb-light"]{--bg:#F7F7F7;--card:#fff;--inp:#fff;--hov:#F0F0F0;--pri:#FF385C;--pri2:#E31C5F;--pri-t:#fff;--glow:rgba(255,56,92,.22);--ok:#008489;--ok-b:#E8F4F5;--ok-t:#004D50;--warn:#FC642D;--warn-b:#FEF0EB;--warn-t:#7A2500;--err:#C13515;--err-b:#FAEAE5;--err-t:#7A1A00;--txt:#222;--mut:#717171;--brd:#DDDDDD;--brd2:#EBEBEB;--foc:#222;--nav:#fff;--nav-brd:#EBEBEB;--nav-sh:0 1px 0 #EBEBEB,0 2px 8px rgba(0,0,0,.05);--sh1:0 1px 2px rgba(0,0,0,.06),0 4px 8px rgba(0,0,0,.05);--sh2:0 4px 16px rgba(0,0,0,.08),0 16px 40px rgba(0,0,0,.10);--r:12px;--rc:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--seg:#F7F7F7;--seg-a:#222;--seg-at:#fff;--tab-a:#222;--tab-b:#FF385C;--av1:linear-gradient(135deg,#FF385C,#E31C5F);--av2:linear-gradient(135deg,#008489,#006B6F);--av3:linear-gradient(135deg,#FC642D,#C13515);--av4:linear-gradient(135deg,#FF385C,#C13515);--fl:#FFEBEE;}
+[data-theme="airbnb-dark"]{--bg:#1A0A0F;--card:#26101A;--inp:#301520;--hov:#3A1A24;--pri:#FF385C;--pri2:#E31C5F;--pri-t:#fff;--glow:rgba(255,56,92,.35);--ok:#00BFA5;--ok-b:rgba(0,191,165,.15);--ok-t:#00BFA5;--warn:#FF8C55;--warn-b:rgba(255,140,85,.15);--warn-t:#FF8C55;--err:#FF6B6B;--err-b:rgba(255,107,107,.15);--err-t:#FF6B6B;--txt:#F5E6EA;--mut:#B08090;--brd:rgba(255,56,92,.22);--brd2:rgba(255,56,92,.12);--foc:#FF385C;--nav:#200D14;--nav-brd:rgba(255,56,92,.18);--nav-sh:0 1px 0 rgba(255,56,92,.12),0 4px 20px rgba(0,0,0,.4);--sh1:0 2px 8px rgba(0,0,0,.4);--sh2:0 8px 40px rgba(0,0,0,.55);--r:12px;--rc:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--seg:rgba(255,255,255,.06);--seg-a:#FF385C;--seg-at:#fff;--tab-a:#FF385C;--tab-b:#FF385C;--av1:linear-gradient(135deg,#FF385C,#C13515);--av2:linear-gradient(135deg,#00BFA5,#009B8A);--av3:linear-gradient(135deg,#FF8C55,#C13515);--av4:linear-gradient(135deg,#FF385C,#E31C5F);--fl:rgba(255,56,92,.15);}
+[data-theme="ocean"]{--bg:#06101E;--card:#0D1B2E;--inp:#132238;--hov:#192C44;--pri:#3B82F6;--pri2:#1D4ED8;--pri-t:#fff;--glow:rgba(59,130,246,.35);--ok:#34D399;--ok-b:rgba(52,211,153,.15);--ok-t:#34D399;--warn:#FBBF24;--warn-b:rgba(251,191,36,.15);--warn-t:#FBBF24;--err:#F87171;--err-b:rgba(248,113,113,.15);--err-t:#F87171;--txt:#E2EAF4;--mut:#7A96B8;--brd:rgba(59,130,246,.2);--brd2:rgba(59,130,246,.1);--foc:#3B82F6;--nav:#08121F;--nav-brd:rgba(59,130,246,.15);--nav-sh:0 1px 0 rgba(59,130,246,.1),0 4px 20px rgba(0,0,0,.5);--sh1:0 2px 10px rgba(0,0,0,.4);--sh2:0 8px 48px rgba(0,0,0,.6);--r:10px;--rc:12px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--seg:rgba(255,255,255,.05);--seg-a:#3B82F6;--seg-at:#fff;--tab-a:#3B82F6;--tab-b:#3B82F6;--av1:linear-gradient(135deg,#3B82F6,#1D4ED8);--av2:linear-gradient(135deg,#34D399,#059669);--av3:linear-gradient(135deg,#FBBF24,#D97706);--av4:linear-gradient(135deg,#3B82F6,#7C3AED);--fl:rgba(59,130,246,.15);}
+[data-theme="emerald"]{--bg:#030F09;--card:#071910;--inp:#0B2418;--hov:#0F2E1F;--pri:#10B981;--pri2:#059669;--pri-t:#fff;--glow:rgba(16,185,129,.35);--ok:#10B981;--ok-b:rgba(16,185,129,.15);--ok-t:#10B981;--warn:#F59E0B;--warn-b:rgba(245,158,11,.15);--warn-t:#F59E0B;--err:#EF4444;--err-b:rgba(239,68,68,.15);--err-t:#EF4444;--txt:#D1FAE5;--mut:#6EE7B7;--brd:rgba(16,185,129,.22);--brd2:rgba(16,185,129,.1);--foc:#10B981;--nav:#050E08;--nav-brd:rgba(16,185,129,.15);--nav-sh:0 1px 0 rgba(16,185,129,.1),0 4px 20px rgba(0,0,0,.5);--sh1:0 2px 10px rgba(0,0,0,.45);--sh2:0 8px 48px rgba(0,0,0,.65);--r:10px;--rc:12px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--seg:rgba(16,185,129,.08);--seg-a:#10B981;--seg-at:#fff;--tab-a:#10B981;--tab-b:#10B981;--av1:linear-gradient(135deg,#10B981,#059669);--av2:linear-gradient(135deg,#059669,#047857);--av3:linear-gradient(135deg,#F59E0B,#D97706);--av4:linear-gradient(135deg,#10B981,#3B82F6);--fl:rgba(16,185,129,.15);}
+[data-theme="amethyst"]{--bg:#0C0714;--card:#150E24;--inp:#1C1430;--hov:#241B3C;--pri:#A855F7;--pri2:#7C3AED;--pri-t:#fff;--glow:rgba(168,85,247,.35);--ok:#34D399;--ok-b:rgba(52,211,153,.14);--ok-t:#34D399;--warn:#F472B6;--warn-b:rgba(244,114,182,.14);--warn-t:#F472B6;--err:#F87171;--err-b:rgba(248,113,113,.14);--err-t:#F87171;--txt:#EDE9FE;--mut:#A78BFA;--brd:rgba(168,85,247,.22);--brd2:rgba(168,85,247,.12);--foc:#A855F7;--nav:#0A0612;--nav-brd:rgba(168,85,247,.18);--nav-sh:0 1px 0 rgba(168,85,247,.12),0 4px 20px rgba(0,0,0,.55);--sh1:0 2px 10px rgba(0,0,0,.45);--sh2:0 8px 48px rgba(0,0,0,.65);--r:12px;--rc:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--seg:rgba(168,85,247,.08);--seg-a:#A855F7;--seg-at:#fff;--tab-a:#C084FC;--tab-b:#A855F7;--av1:linear-gradient(135deg,#A855F7,#7C3AED);--av2:linear-gradient(135deg,#34D399,#059669);--av3:linear-gradient(135deg,#F472B6,#EC4899);--av4:linear-gradient(135deg,#A855F7,#EC4899);--fl:rgba(168,85,247,.15);}
+[data-theme="facebook"]{--bg:#F0F2F5;--card:#FFFFFF;--inp:#F0F2F5;--hov:#F2F3F5;--pri:#1877F2;--pri2:#1559b5;--pri-t:#fff;--glow:rgba(24,119,242,.25);--ok:#42B72A;--ok-b:#E7F4E4;--ok-t:#1E7E34;--warn:#F7B928;--warn-b:#FEF8E7;--warn-t:#856404;--err:#FA3E3E;--err-b:#FDE8E8;--err-t:#9B1C1C;--txt:#050505;--mut:#65676B;--brd:#CED0D4;--brd2:#E4E6EB;--foc:#1877F2;--nav:#FFFFFF;--nav-brd:#E4E6EB;--nav-sh:0 2px 4px rgba(0,0,0,.1),0 8px 16px rgba(0,0,0,.05);--sh1:0 1px 2px rgba(0,0,0,.1);--sh2:0 2px 8px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.08);--r:8px;--rc:8px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--seg:#E4E6EB;--seg-a:#1877F2;--seg-at:#fff;--tab-a:#1877F2;--tab-b:#1877F2;--av1:linear-gradient(135deg,#1877F2,#1559b5);--av2:linear-gradient(135deg,#42B72A,#2D8A1A);--av3:linear-gradient(135deg,#F7B928,#D4970A);--av4:linear-gradient(135deg,#1877F2,#42B72A);--fl:#E7F3FF;}
+
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100vh;font-family:var(--font);font-size:14px;color:var(--txt);background:var(--bg);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+body{padding:0 0 60px;max-width:1400px;margin:0 auto}
+
+/* TOPBAR */
+.topbar{display:flex;align-items:center;padding:0 20px;height:56px;background:var(--nav);border-bottom:1px solid var(--nav-brd);box-shadow:var(--nav-sh);position:sticky;top:0;z-index:100;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.logo{width:40px;height:40px;border-radius:10px;overflow:hidden;display:grid;place-items:center;flex-shrink:0;background:#FF385C;padding:4px}
+.logo svg{width:100%;height:100%;display:block;fill:#fff;object-fit:contain}
+.title{font-weight:700;font-size:16px;color:var(--txt);line-height:1.2}
+.subtitle{font-size:11px;color:var(--mut);letter-spacing:.4px;text-transform:uppercase}
+.topbar-center{margin-left:auto;display:flex;align-items:center;gap:8px}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.clock{font-size:13px;color:var(--mut);font-variant-numeric:tabular-nums}
+.theme-sw{display:flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;background:var(--card);border:1px solid var(--brd)}
+.theme-sw-label{font-size:10px;font-weight:600;color:var(--mut);margin-right:2px}
+.tdot{width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .15s,border-color .15s;flex-shrink:0}
+.tdot:hover{transform:scale(1.2)}
+.tdot.active{border-color:var(--txt);transform:scale(1.15)}
+.tdot.t-al{background:#FF385C}
+.tdot.t-ad{background:linear-gradient(135deg,#200D14,#FF385C)}
+.tdot.t-oc{background:linear-gradient(135deg,#06101E,#3B82F6)}
+.tdot.t-em{background:linear-gradient(135deg,#030F09,#10B981)}
+.tdot.t-am{background:linear-gradient(135deg,#0C0714,#A855F7)}
+.tdot.t-fb{background:linear-gradient(135deg,#1877F2,#1558c0)}
+
+
+/* BELL */
+.bell-btn{position:relative;width:36px;height:36px;border-radius:50%;background:var(--pri);border:none;cursor:pointer;display:grid;place-items:center;font-size:16px;box-shadow:0 2px 8px var(--glow);transition:transform .15s;flex-shrink:0}
+.bell-btn:hover{transform:scale(1.08)}
+.bell-btn:active{transform:scale(.96)}
+.bell-badge{position:absolute;top:-3px;right:-3px;background:#EF4444;color:#fff;border-radius:999px;font-size:9px;font-weight:700;padding:1px 5px;min-width:16px;text-align:center;border:2px solid var(--nav)}
+@keyframes bellRing{0%,100%{transform:rotate(0)}15%{transform:rotate(14deg)}30%{transform:rotate(-14deg)}45%{transform:rotate(9deg)}60%{transform:rotate(-9deg)}75%{transform:rotate(4deg)}}
+.bell-btn.ringing{animation:bellRing .5s ease}
+
+/* PROFILE */
+.profile{display:flex;align-items:center;gap:14px;padding:10px 20px;background:var(--nav);border-bottom:1px solid var(--nav-brd)}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--av1);display:grid;place-items:center;font-weight:700;font-size:17px;flex-shrink:0;color:#fff}
+.avatar.tl{background:var(--av2)}.avatar.tm{background:var(--av3)}.avatar.wfm{background:var(--av4)}
+.profile-body{flex:1;min-width:0}
+.profile-name{font-weight:700;font-size:15px}
+.profile-meta{color:var(--mut);font-size:12px;display:flex;gap:14px;flex-wrap:wrap;margin-top:2px}
+.profile-meta b{color:var(--txt);font-weight:500}
+.profile-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+
+/* LOGIN */
+.login-wrap{display:flex;justify-content:center;align-items:flex-start;padding:48px 20px;min-height:calc(100vh - 56px)}
+.login-card{max-width:460px;width:100%}
+.login-logo{text-align:center;margin-bottom:24px}
+.login-logo-img{width:56px;height:56px;border-radius:14px;overflow:hidden;margin:0 auto 16px;box-shadow:0 4px 20px var(--glow);background:#FF385C;padding:6px;display:grid;place-items:center}
+.login-logo-img svg{width:100%;height:100%;display:block;fill:#fff;object-fit:contain}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--brd2);border-radius:var(--rc);padding:22px;margin-bottom:16px;box-shadow:var(--sh1)}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:10px;flex-wrap:wrap}
+h2{margin:0 0 6px;font-size:18px;font-weight:700}
+h3{margin:0 0 10px;font-size:12px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.6px}
+.muted{color:var(--mut);font-size:13px}
+.req{color:var(--pri);font-weight:600}
+
+/* FORMS */
+label{display:block;font-weight:600;margin:14px 0 5px;font-size:12px;color:var(--mut);letter-spacing:.4px;text-transform:uppercase}
+input,select,textarea{width:100%;padding:11px 13px;background:var(--inp);color:var(--txt);border:1px solid var(--brd);border-radius:var(--r);font-size:14px;font-family:inherit;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--foc);box-shadow:0 0 0 3px var(--glow)}
+textarea{resize:vertical}
+select option{background:var(--card);color:var(--txt)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row{display:flex;gap:10px;margin-top:8px}
+.row input{flex:1}
+.action-row{display:flex;gap:10px;margin-top:18px}
+.action-row .btn{flex:1}
+
+/* BUTTONS */
+.btn{border:none;cursor:pointer;font-weight:600;font-size:14px;padding:11px 18px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;transition:filter .15s,transform .1s}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.55;cursor:wait}
+.btn-primary{background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--pri-t);box-shadow:0 4px 14px var(--glow)}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--brd)}
+.btn-ghost:hover{background:var(--hov)}
+.btn-ok{background:var(--ok);color:#fff}
+.btn-danger{background:var(--err);color:#fff}
+.btn-sm{padding:6px 12px;font-size:12px}
+
+/* CHIPS */
+.chip{display:inline-block;padding:4px 11px;border-radius:999px;font-size:11.5px;font-weight:600;background:rgba(0,0,0,.06);border:1px solid var(--brd)}
+.chip-ok{background:var(--ok-b);border-color:var(--ok);color:var(--ok-t)}
+.chip-warn{background:var(--warn-b);border-color:var(--warn);color:var(--warn-t)}
+.chip-bad{background:var(--err-b);border-color:var(--err);color:var(--err-t)}
+.chip-tl{background:var(--ok-b);border-color:var(--ok);color:var(--ok-t)}
+.chip-tm{background:var(--warn-b);border-color:var(--warn);color:var(--warn-t)}
+.chip-wfm{background:var(--err-b);border-color:var(--pri);color:var(--pri)}
+.chip-qa{background:rgba(5,150,105,.12);border:1px solid rgba(5,150,105,.35);border-radius:999px;color:#065F46;font-size:11.5px;font-weight:600;padding:3px 11px;display:inline-block}
+.chipstrip{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chip-btn{background:rgba(0,0,0,.04);color:var(--mut);border:1px solid var(--brd);border-radius:999px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit}
+.chip-btn:hover{background:var(--pri);color:#fff;border-color:var(--pri)}
+
+/* SEGMENT / TABS */
+.seg{display:inline-flex;background:var(--seg);border:1px solid var(--brd);border-radius:9px;padding:3px;width:100%}
+.seg button{flex:1;background:transparent;color:var(--mut);border:none;padding:8px 12px;font-size:13px;font-weight:600;border-radius:7px;cursor:pointer;font-family:inherit}
+.seg button.active{background:var(--seg-a);color:var(--seg-at)}
+.tabs{display:flex;gap:4px;margin:-6px -6px 12px;border-bottom:1px solid var(--brd2);padding:0 0 6px;flex-wrap:wrap}
+.tab{background:transparent;color:var(--mut);border:none;padding:9px 14px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;position:relative;border-radius:8px 8px 0 0}
+.tab:hover{color:var(--txt);background:var(--hov)}
+.tab.active{color:var(--tab-a)}
+.tab.active::after{content:'';position:absolute;left:10px;right:10px;bottom:-7px;height:2px;background:var(--tab-b);border-radius:2px}
+
+/* MISC */
+.hint{font-size:12px;color:var(--mut);margin-top:8px}
+kbd{background:rgba(0,0,0,.06);padding:1px 6px;border-radius:4px;border:1px solid var(--brd);font-size:11px;font-family:monospace}
+.grid{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.page-pad{padding:18px 20px 60px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.topbar-center{display:none}}
+
+/* ENTRY LIST */
+.list{display:flex;flex-direction:column;gap:8px;max-height:560px;overflow-y:auto}
+.list::-webkit-scrollbar{width:6px}
+.list::-webkit-scrollbar-thumb{background:var(--brd);border-radius:3px}
+.entry{background:var(--card);border:1px solid var(--brd2);border-left-width:3px;border-radius:var(--r);padding:11px 13px}
+.entry.high{border-left-color:var(--err)}
+.entry.medium{border-left-color:var(--warn)}
+.entry.low{border-left-color:var(--ok)}
+.entry.overdue{border-left-color:var(--err);background:var(--err-b)}
+.entry.completed{opacity:.65;border-left-color:var(--ok)}
+.entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.entry-case{font-weight:700;font-size:14px;font-family:monospace}
+.entry-meta{font-size:12px;color:var(--mut)}
+.entry-actions{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap}
+
+/* COUNTDOWN / STATS */
+.countdown{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;background:var(--ok-b);color:var(--ok-t)}
+.countdown.soon{background:var(--warn-b);color:var(--warn-t)}
+.countdown.now{background:var(--err-b);color:var(--err-t);animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
+@media(max-width:900px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--card);border:1px solid var(--brd2);border-radius:10px;padding:14px;text-align:center}
+.stat-val{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums}
+.stat-lbl{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+
+
+/* TABLE */
+table.data{width:100%;border-collapse:collapse;font-size:13px}
+table.data th{text-align:left;padding:8px 10px;color:var(--mut);text-transform:uppercase;font-size:10.5px;letter-spacing:.6px;border-bottom:1px solid var(--brd);font-weight:600;position:sticky;top:0;background:var(--card);z-index:1}
+table.data td{padding:9px 10px;border-bottom:1px solid var(--brd2)}
+table.data tr:hover td{background:var(--hov)}
+.tbl-wrap{max-height:520px;overflow:auto;border:1px solid var(--brd2);border-radius:var(--r)}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.filter-bar input,.filter-bar select{width:auto;flex:1;min-width:110px;padding:8px 11px;font-size:13px}
+
+/* TOAST / MODAL */
+#toastHost{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:8px;z-index:9999;pointer-events:none}
+.toast{background:var(--card);border:1px solid var(--brd2);border-left:4px solid var(--pri);color:var(--txt);padding:12px 18px;border-radius:var(--r);box-shadow:var(--sh2);min-width:260px;max-width:420px;font-size:13.5px;pointer-events:auto}
+.toast.ok{border-left-color:var(--ok)}
+.toast.warn{border-left-color:var(--warn)}
+.toast.error{border-left-color:var(--err)}
+.toast-title{font-weight:700;margin-bottom:2px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(4,8,20,.65);backdrop-filter:blur(6px);display:grid;place-items:center;z-index:9000;padding:20px}
+.modal{background:var(--card);border:1px solid var(--brd2);border-radius:var(--rc);padding:26px;max-width:500px;width:100%;box-shadow:var(--sh2);max-height:85vh;overflow-y:auto}
+.modal h3{margin:0 0 10px;font-size:17px;color:var(--txt);text-transform:none;letter-spacing:0;font-weight:700}
+
+/* SPINNER / EMPTY */
+.spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{text-align:center;padding:36px 14px;color:var(--mut);font-size:13px}
+
+/* CONFIG / AUDIT */
+.config-row{display:grid;grid-template-columns:1fr 2fr auto;gap:10px;padding:8px 10px;border-radius:7px;align-items:center}
+.config-row:nth-child(odd){background:rgba(0,0,0,.03)}
+.config-row input{padding:7px 10px;font-size:13px}
+.config-key{font-family:monospace;font-size:12px;color:var(--pri)}
+.audit-row{font-size:12px;padding:7px 10px;border-radius:6px;display:grid;grid-template-columns:120px 140px 1fr;gap:10px}
+.audit-row:nth-child(odd){background:rgba(0,0,0,.03)}
+.audit-row .ts{color:var(--mut);font-family:monospace}
+.audit-row .action{font-weight:600;color:var(--pri)}
+
+/* ROLE BANNERS */
+.role-banner{padding:10px 16px;border-radius:var(--r);margin-bottom:12px;font-size:13px;font-weight:500}
+.role-banner.tl{background:var(--ok-b);border:1px solid var(--ok);color:var(--ok-t)}
+.role-banner.tm{background:var(--warn-b);border:1px solid var(--warn);color:var(--warn-t)}
+.role-banner.wfm{background:var(--err-b);border:1px solid var(--pri);color:var(--pri)}
+.role-banner.qa{background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.35);color:#065F46}
+@keyframes flash-bg{0%,100%{background-color:transparent}50%{background-color:var(--fl)}}
+body.flash-on{animation:flash-bg 1s 3}
+
+/* PROGRESS BAR */
+.progress-wrap{margin-bottom:14px}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--mut);margin-bottom:5px}
+.progress-label span:last-child{color:var(--txt)}
+.progress-track{height:10px;background:var(--brd2);border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--ok),var(--pri));transition:width .4s ease}
+.progress-fill.done{background:var(--ok)}
+
+/* BULK BAR */
+.bulk-bar{display:none;align-items:center;gap:8px;padding:8px 12px;background:var(--fl);border:1px solid var(--pri);border-radius:var(--r);margin-bottom:10px;flex-wrap:wrap}
+.bulk-bar.show{display:flex}
+.bulk-bar span{font-size:13px;font-weight:600;color:var(--txt)}
+input[type=checkbox].bulk-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--pri)}
+
+/* SLA / FLAG */
+.sla-chip{display:inline-block;padding:2px 7px;border-radius:999px;font-size:10.5px;font-weight:700;background:var(--err-b);color:var(--err-t);white-space:nowrap}
+.flag-badge{display:inline-flex;align-items:center;gap:3px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.5);color:#92400E;border-radius:999px;font-size:10.5px;font-weight:700;padding:2px 8px;cursor:pointer}
+.flag-badge:hover{background:rgba(245,158,11,.3)}
+
+/* AGENT STATS */
+.perf-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:4px}
+@media(max-width:700px){.perf-stats{grid-template-columns:repeat(2,1fr)}}
+.perf-card{background:var(--card);border:1px solid var(--brd2);border-radius:10px;padding:14px;text-align:center}
+.perf-val{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.perf-lbl{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.perf-chart{display:flex;align-items:flex-end;gap:6px;height:100px;margin-top:8px;padding:0 4px}
+.perf-bar-wrap{display:flex;flex-direction:column;align-items:center;flex:1;gap:4px}
+.perf-bar-outer{flex:1;width:100%;display:flex;align-items:flex-end;background:var(--brd2);border-radius:4px;overflow:hidden;min-height:8px}
+.perf-bar-fill{width:100%;background:var(--pri);border-radius:4px;transition:height .4s ease;min-height:4px}
+.perf-bar-fill.today{background:var(--ok)}
+.perf-bar-val{font-size:11px;font-weight:700;color:var(--txt)}
+.perf-bar-lbl{font-size:10px;color:var(--mut);white-space:nowrap}
+
+/* REASSIGN BANNER */
+.reassign-banner{border:1px solid var(--warn);border-radius:var(--r);overflow:hidden;margin-bottom:12px}
+.reassign-banner-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--warn-b);flex-wrap:wrap;gap:4px}
+.reassign-card{padding:12px 14px;border-top:1px solid var(--brd2);background:var(--card)}
+.reassign-card-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.reassign-card-actions{display:flex;gap:8px;margin-top:8px}
+
+/* TIMEZONE BAR */
+.tz-bar{display:flex;align-items:center;gap:6px;padding:6px 12px;background:var(--card);border:1px solid var(--brd2);border-radius:var(--r);margin-bottom:12px;flex-wrap:wrap}
+.tz-bar-label{font-size:11px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-right:4px}
+.tz-chip{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;background:var(--hov);border:1px solid var(--brd);font-size:12px;font-variant-numeric:tabular-nums}
+.tz-chip .tz-label{font-weight:700;color:var(--pri);font-size:10px;text-transform:uppercase;letter-spacing:.4px}
+.tz-chip .tz-time{color:var(--txt);font-weight:600}
+
+/* TIMEZONE CONVERTER */
+.tz-convert{display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap;padding:6px 10px;background:var(--hov);border-radius:8px;font-size:12px}
+.tz-convert-label{color:var(--mut);font-size:11px;font-weight:600;white-space:nowrap}
+.tz-convert-chip{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:999px;background:var(--card);border:1px solid var(--brd);font-size:12px}
+.tz-convert-chip .tz-label{font-weight:700;color:var(--ok);font-size:10px;text-transform:uppercase}
+.tz-convert-chip .tz-time{color:var(--txt);font-weight:600;font-variant-numeric:tabular-nums}
+
+/* Entry ID row */
+.entry-id-row{display:flex;align-items:center;gap:6px;margin:4px 0 4px}
+.entry-id-label{font-size:11px;color:var(--mut);font-weight:500;text-transform:uppercase;letter-spacing:.4px}
+.entry-id-chip{font-family:'Courier New',Courier,monospace;font-size:12px;font-weight:700;color:#1D4ED8;background:var(--hov);border:1px solid var(--brd);border-radius:4px;padding:1px 7px;letter-spacing:.5px;transition:background .2s,color .2s}
+.entry-id-copy{border:none;background:none;cursor:pointer;font-size:14px;padding:0 2px;opacity:.6;transition:opacity .15s;line-height:1}
+.entry-id-copy:hover{opacity:1}
+
+/* Resolved Early */
+.chip-early{background:var(--ok);color:#fff;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:500}
+.btn-early{background:var(--ok-b);color:var(--ok-t);border:1.5px solid var(--ok)}
+.btn-early:hover{background:var(--ok);color:#fff}
+.early-found-box{padding:12px 14px;background:var(--ok-b);border:1px solid var(--ok);border-radius:var(--r);font-size:13px;margin-bottom:12px}
+.early-found-box .ef-label{color:var(--mut);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.early-found-box .ef-val{color:var(--txt);font-weight:500}
+
+/* Session keepalive */
+#sessionBadge{display:none;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:500;cursor:default;transition:all .3s}
+#sessionBadge.healthy{background:var(--ok-b);color:var(--ok-t);border:1px solid var(--ok)}
+#sessionBadge.warning{background:#FAEEDA;color:#633806;border:1px solid #EA7317}
+#sessionBadge.refreshing{background:#E6F1FB;color:#0C447C;border:1px solid #185FA5}
+#sessionBadge .sb-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+#sessionBadge.healthy .sb-dot{background:var(--ok)}
+#sessionBadge.warning .sb-dot{background:#EA7317;animation:pulse-dot 1s ease-in-out infinite}
+#sessionBadge.refreshing .sb-dot{background:#185FA5;animation:pulse-dot .6s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo" title="Airbnb">
+      <!-- Inline Airbnb Belo logo (replaces previous base64 JPEG) -->
+      <svg viewBox="262 362 530 530" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-label="Airbnb">
+        <path d="M499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s64 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1-7 8-12 12-16 12-4 0-8-4-14-12zm230.1 103c39-26 55-65 55-101 0-25-9-50-26-71-17-22-43-39-78-50 47-30 68-66 68-102 0-43-22-78-65-103-43-25-95-37-156-37s-113 12-156 37c-43 25-65 60-65 103 0 36 21 72 68 102-35 11-61 28-78 50-17 21-26 46-26 71 0 36 16 75 55 101 39 26 86 39 142 39s103-13 142-39z"/>
+      </svg>
+    </div>
+    <div>
+      <div class="title">CMS Enterprise Portal</div>
+      <div class="subtitle">v3.6</div>
+    </div>
+  </div>
+  <div class="topbar-center">
+    <span id="netBadge" class="chip chip-ok" style="font-size:12px">&#9679; Online</span>
+    <span id="queueBadge" class="chip chip-warn" style="display:none;font-size:12px">0 queued</span>
+    <button id="notifBellBtn" class="bell-btn" onclick="openSendNotificationModal()" style="display:none" title="Notifications">&#128276;<span id="notifBellCount" class="bell-badge" style="display:none">0</span></button>
+  </div>
+  <div class="topbar-right">
+    <span id="clock" class="clock"></span>
+    <span id="sessionBadge"><span class="sb-dot"></span><span id="sbText">Session active</span></span>
+    <span class="theme-sw-label">Theme</span>
+    <div class="theme-sw">
+      <div class="tdot t-al active" data-theme="airbnb-light" title="Airbnb Light" onclick="setTheme('airbnb-light')"></div>
+      <div class="tdot t-ad" data-theme="airbnb-dark" title="Airbnb Dark" onclick="setTheme('airbnb-dark')"></div>
+      <div class="tdot t-oc" data-theme="ocean" title="Ocean" onclick="setTheme('ocean')"></div>
+      <div class="tdot t-em" data-theme="emerald" title="Emerald" onclick="setTheme('emerald')"></div>
+      <div class="tdot t-am" data-theme="amethyst" title="Amethyst" onclick="setTheme('amethyst')"></div>
+      <div class="tdot t-fb" data-theme="facebook" title="Facebook" onclick="setTheme('facebook')"></div>
+    </div>
+  </div>
+</header>
+
+<!-- Session restore screen — shown briefly on page refresh -->
+<div id="restoreScreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+  <div class="logo" style="width:52px;height:52px;border-radius:13px">
+    <svg viewBox="262 362 530 530" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;fill:#fff">
+      <path d="M499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s64 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1-7 8-12 12-16 12-4 0-8-4-14-12zm230.1 103c39-26 55-65 55-101 0-25-9-50-26-71-17-22-43-39-78-50 47-30 68-66 68-102 0-43-22-78-65-103-43-25-95-37-156-37s-113 12-156 37c-43 25-65 60-65 103 0 36 21 72 68 102-35 11-61 28-78 50-17 21-26 46-26 71 0 36 16 75 55 101 39 26 86 39 142 39s103-13 142-39z"/>
+    </svg>
+  </div>
+  <div class="spinner" style="width:22px;height:22px;border-width:3px;border-color:var(--brd);border-top-color:var(--pri)"></div>
+  <p style="color:var(--mut);font-size:13px">Restoring your session...</p>
+</div>
+
+<section id="lookupCard" class="login-wrap">
+  <div class="card login-card">
+    <div class="login-logo">
+      <div class="login-logo-img">
+        <!-- Inline Airbnb Belo logo (replaces previous base64 JPEG) -->
+        <svg viewBox="262 362 530 530" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-label="Airbnb">
+          <path d="M499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s64 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1-7 8-12 12-16 12-4 0-8-4-14-12zm230.1 103c39-26 55-65 55-101 0-25-9-50-26-71-17-22-43-39-78-50 47-30 68-66 68-102 0-43-22-78-65-103-43-25-95-37-156-37s-113 12-156 37c-43 25-65 60-65 103 0 36 21 72 68 102-35 11-61 28-78 50-17 21-26 46-26 71 0 36 16 75 55 101 39 26 86 39 142 39s103-13 142-39z"/>
+        </svg>
+      </div>
+      <h2 style="font-size:22px;margin-bottom:6px">Welcome back</h2>
+      <p class="muted">Enter your employee code to continue.</p>
+      <p class="muted" style="font-size:12px;margin-top:4px">Agents: emp code only &nbsp;&middot;&nbsp; Supervisors &amp; WFM: emp code + password</p>
+    </div>
+    <div id="step1">
+      <label>Employee Code</label>
+      <div class="row">
+        <input id="empId" type="text" autocomplete="off" placeholder="e.g. 10234567" onkeydown="if(event.key==='Enter') lookupEmp()">
+        <button id="vBtn" class="btn btn-primary" onclick="lookupEmp()"><span class="btn-label">Continue</span><span class="spinner" style="display:none"></span></button>
+      </div>
+    </div>
+    <div id="step2" style="display:none">
+      <div class="role-banner" id="step2Banner" style="background:rgba(0,0,0,.04);border:1px solid var(--brd);margin-top:12px"><span id="step2Name"></span></div>
+      <div id="pwdExisting" style="display:none">
+        <label>Password</label>
+        <input id="pwdInput" type="password" autocomplete="current-password" placeholder="Enter your password" onkeydown="if(event.key==='Enter') submitPassword()">
+        <div class="hint">Forgot? Ask a WFM Admin to reset your password.</div>
+      </div>
+      <div id="pwdFirstTime" style="display:none">
+        <p class="muted" style="margin-top:12px">First login &mdash; please set a password (min 8 chars, letters + numbers).</p>
+        <label>New Password</label><input id="newPwdInput" type="password" autocomplete="new-password" placeholder="Choose a password">
+        <label>Confirm Password</label><input id="newPwdConfirm" type="password" autocomplete="new-password" placeholder="Type it again" onkeydown="if(event.key==='Enter') submitPassword()">
+      </div>
+      <div id="pwdLocked" style="display:none">
+        <p style="color:var(--err);margin-top:12px">Account locked until <b id="lockedUntilTxt"></b>. Contact WFM Admin.</p>
+      </div>
+      <div class="action-row">
+        <button class="btn btn-ghost" onclick="backToStep1()">&larr; Back</button>
+        <button id="pwdSubmitBtn" class="btn btn-primary" onclick="submitPassword()"><span class="btn-label">Sign In</span><span class="spinner" style="display:none"></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="appShell" style="display:none">
+  <section class="profile">
+    <div class="avatar" id="pAvatar">&mdash;</div>
+    <div class="profile-body">
+      <div class="profile-name" id="pName">&mdash;</div>
+      <div class="profile-meta"><span id="pDesig"></span><span id="pLOB"></span><span id="pEmail"></span></div>
+    </div>
+    <div class="profile-actions">
+      <span class="chip" id="roleBadge">Agent</span>
+      <button id="changePwdBtn" class="btn btn-ghost btn-sm" onclick="openChangePasswordModal()" style="display:none">&#128274; Password</button>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">Switch</button>
+    </div>
+  </section>
+  <div class="page-pad">
+    <div id="agentView" style="display:none"></div>
+    <div id="adminView" style="display:none"></div>
+  </div>
+</main>
+
+<div id="toastHost"></div>
+<div id="modalHost"></div>
+
+
+<script>
+var THEMES=['airbnb-light','airbnb-dark','ocean','emerald','amethyst','facebook'];
+function setTheme(t){
+  if(THEMES.indexOf(t)===-1)t='airbnb-light';
+  document.documentElement.setAttribute('data-theme',t);
+  try{localStorage.setItem('cms_theme',t);}catch(e){}
+  var dots=document.querySelectorAll('.tdot');
+  for(var i=0;i<dots.length;i++)dots[i].classList.toggle('active',dots[i].getAttribute('data-theme')===t);
+}
+
+// STATE
+var state={
+  user:null,role:null,dashboard:null,roster:[],config:[],credentials:[],
+  pendingLogin:null,upcoming:[],pendingReassigns:[],qaFlags:{},rescheduleTracker:{},
+  offlineQueue:JSON.parse(localStorage.getItem('cms_offline_queue')||'[]'),
+  reminded:JSON.parse(localStorage.getItem('cms_reminded')||'{}'),
+  notifTargets:null,notifPoller:null,
+  shownNotifs:JSON.parse(localStorage.getItem('cms_shown_notifs')||'{}'),
+  dashboardDays:Number(localStorage.getItem('cms_dashboard_days')||30),
+  countdownTicker:null,reminderPoller:null,priorityAutoSet:false,
+  recentNotifs:[]
+};
+
+// ── SESSION PERSISTENCE ───────────────────────────────────────────────
+// Survives page refresh for both agents and password-based roles.
+// Agents: re-calls login(emp). Admins: verifies a server-side UUID token.
+var _SESSION_KEY     = 'cms_session_v1';
+var _SESSION_MAX_AGE = 8 * 3600 * 1000; // 8 hours — matches Code.gs SESSION_TOKEN_TTL_MS
+
+function _saveSession(user) {
+  try {
+    localStorage.setItem(_SESSION_KEY, JSON.stringify({
+      emp:          user.emp,
+      role:         user.role,
+      sessionToken: user.sessionToken || null,
+      ts:           Date.now()
+    }));
+  } catch(e) {}
+}
+
+function _clearSession() {
+  try { localStorage.removeItem(_SESSION_KEY); } catch(e) {}
+}
+
+function _loadSession() {
+  try {
+    var s = JSON.parse(localStorage.getItem(_SESSION_KEY) || 'null');
+    if (!s || !s.emp || !s.ts) return null;
+    if (Date.now() - s.ts > _SESSION_MAX_AGE) { _clearSession(); return null; }
+    return s;
+  } catch(e) { return null; }
+}
+
+function tryAutoRestore_() {
+  var saved = _loadSession();
+  if (!saved) return; // no saved session → login form stays visible normally
+
+  // Hide login, show restore screen
+  document.getElementById('lookupCard').style.display  = 'none';
+  document.getElementById('restoreScreen').style.display = 'flex';
+
+  var onFail = function() {
+    _clearSession();
+    document.getElementById('restoreScreen').style.display = 'none';
+    document.getElementById('lookupCard').style.display    = 'flex';
+    var last = localStorage.getItem('cms_last_emp');
+    if (last) { var el = document.getElementById('empId'); if (el) el.value = last; }
+    document.getElementById('empId').focus();
+  };
+
+  if (saved.role === 'Agent') {
+    // Agents have no password — just re-call login() to get fresh queue data
+    google.script.run
+      .withSuccessHandler(function(data) {
+        document.getElementById('restoreScreen').style.display = 'none';
+        if (data && data.role) { finishLogin(data, saved.emp); }
+        else { onFail(); }
+      })
+      .withFailureHandler(onFail)
+      .login(saved.emp);
+
+  } else {
+    // Password roles — verify the stored token server-side
+    if (!saved.sessionToken) { onFail(); return; }
+    google.script.run
+      .withSuccessHandler(function(data) {
+        document.getElementById('restoreScreen').style.display = 'none';
+        if (data && data.role) { finishLogin(data, saved.emp); }
+        else { onFail(); }
+      })
+      .withFailureHandler(function(err) {
+        // SESSION_EXPIRED is the expected error when token is stale
+        document.getElementById('restoreScreen').style.display = 'none';
+        onFail();
+      })
+      .restoreAdminSession(saved.emp, saved.sessionToken);
+  }
+}
+
+// TIMEZONE CONFIG
+var TZ_CONFIG=[
+  {id:'tz-ist', label:'IST',  off:330,  note:'India'},
+  {id:'tz-gst', label:'GST',  off:240,  note:'Gulf/Dubai'},
+  {id:'tz-cet', label:'EU',   off:60,   note:'Europe Central'},
+  {id:'tz-est', label:'NA-E', off:-300, note:'US East'},
+  {id:'tz-pst', label:'PST',  off:-480, note:'US West'},
+  {id:'tz-sgt', label:'APAC', off:480,  note:'Singapore/HK'}
+];
+
+window.addEventListener('load',function(){
+  setTheme(localStorage.getItem('cms_theme')||'airbnb-light');
+  if(typeof Notification!=='undefined' && Notification.permission==='default'){
+    try{Notification.requestPermission();}catch(e){}
+  }
+  startClock();
+  watchNetwork();
+  // Try to restore previous session before showing login form
+  var _hasSaved = _loadSession();
+  if (_hasSaved) {
+    tryAutoRestore_();
+  } else {
+    var last = localStorage.getItem('cms_last_emp');
+    if (last) document.getElementById('empId').value = last;
+    document.getElementById('empId').focus();
+  }
+});
+
+function startClock(){
+  function pad(n){return n<10?'0'+n:String(n);}
+  function tick(){
+    var utcMs=Date.now();
+    TZ_CONFIG.forEach(function(z){
+      var el=document.getElementById(z.id);if(!el)return;
+      var d=new Date(utcMs+z.off*60000);
+      el.innerHTML='<span class="tz-label">'+z.label+'</span><span class="tz-time">'+pad(d.getUTCHours())+':'+pad(d.getUTCMinutes())+'</span>';
+    });
+    var ist=new Date(utcMs+330*60000);
+    var cl=document.getElementById('clock');
+    if(cl)cl.textContent=pad(ist.getUTCHours())+':'+pad(ist.getUTCMinutes())+':'+pad(ist.getUTCSeconds())+' IST';
+  }
+  tick();setInterval(tick,1000);
+}
+function watchNetwork(){
+  function update(){
+    var b=document.getElementById('netBadge');
+    if(navigator.onLine){b.className='chip chip-ok';b.textContent='\u25CF Online';processOfflineQueue();}
+    else{b.className='chip chip-bad';b.textContent='\u25CF Offline';}
+  }
+  window.addEventListener('online',update);window.addEventListener('offline',update);update();
+}
+function updateQueueBadge(){
+  var b=document.getElementById('queueBadge');
+  if(state.offlineQueue.length){b.style.display='inline-block';b.textContent=state.offlineQueue.length+' queued';}
+  else b.style.display='none';
+}
+
+// LOGIN
+function lookupEmp(){
+  var id=document.getElementById('empId').value.trim();
+  if(!id)return toast('Enter your employee code.','warn');
+  var btn=document.getElementById('vBtn');setBusy(btn,true);
+  google.script.run
+    .withSuccessHandler(function(data){
+      setBusy(btn,false);
+      if(data&&data.needsPassword){
+        state.pendingLogin={emp:data.emp,firstTime:!!data.firstTime,role:data.role};
+        document.getElementById('step2Name').innerHTML='<b>'+escape_(data.name)+'</b> \u00B7 '+escape_(data.role)+(data.designation?' \u00B7 '+escape_(data.designation):'');
+        document.getElementById('step1').style.display='none';
+        document.getElementById('step2').style.display='block';
+        document.getElementById('pwdExisting').style.display='none';
+        document.getElementById('pwdFirstTime').style.display='none';
+        document.getElementById('pwdLocked').style.display='none';
+        if(data.locked){
+          document.getElementById('pwdLocked').style.display='block';
+          document.getElementById('lockedUntilTxt').textContent=data.lockedUntil||'(unknown)';
+          document.getElementById('pwdSubmitBtn').style.display='none';
+        }else if(data.firstTime){
+          document.getElementById('pwdFirstTime').style.display='block';
+          document.getElementById('pwdSubmitBtn').style.display='inline-flex';
+          setTimeout(function(){document.getElementById('newPwdInput').focus();},50);
+        }else{
+          document.getElementById('pwdExisting').style.display='block';
+          document.getElementById('pwdSubmitBtn').style.display='inline-flex';
+          setTimeout(function(){document.getElementById('pwdInput').focus();},50);
+        }
+        return;
+      }
+      finishLogin(data,id);
+    })
+    .withFailureHandler(function(err){setBusy(btn,false);toast(err.message||'Lookup failed.','error');})
+    .login(id);
+}
+
+function submitPassword(){
+  if(!state.pendingLogin)return backToStep1();
+  var emp=state.pendingLogin.emp;var firstTime=state.pendingLogin.firstTime;
+  var pwd='',newPwd='';
+  if(firstTime){
+    newPwd=document.getElementById('newPwdInput').value;
+    var c=document.getElementById('newPwdConfirm').value;
+    if(!newPwd)return toast('Enter a password.','warn');
+    if(newPwd!==c)return toast('Passwords do not match.','warn');
+    if(newPwd.length<8)return toast('Password must be at least 8 characters.','warn');
+    if(!/[a-zA-Z]/.test(newPwd)||!/[0-9]/.test(newPwd))return toast('Password must contain letters and numbers.','warn');
+  }else{
+    pwd=document.getElementById('pwdInput').value;
+    if(!pwd)return toast('Enter your password.','warn');
+  }
+  var btn=document.getElementById('pwdSubmitBtn');setBusy(btn,true);
+  google.script.run
+    .withSuccessHandler(function(data){setBusy(btn,false);finishLogin(data,emp);})
+    .withFailureHandler(function(err){setBusy(btn,false);toast(err.message||'Sign-in failed.','error');if(!firstTime)document.getElementById('pwdInput').value='';})
+    .completeAdminLogin(emp,pwd,newPwd);
+}
+
+function backToStep1(){
+  state.pendingLogin=null;
+  document.getElementById('step1').style.display='block';
+  document.getElementById('step2').style.display='none';
+  document.getElementById('pwdInput').value='';
+  document.getElementById('newPwdInput').value='';
+  document.getElementById('newPwdConfirm').value='';
+  document.getElementById('empId').focus();
+}
+
+function finishLogin(data, empId) {
+  if (!data) {
+    console.error('finishLogin: data is null or undefined');
+    toast('Login failed: Server returned empty response. Please try again.', 'error');
+    document.getElementById('step1').style.display = 'block';
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('pwdInput').value = '';
+    document.getElementById('newPwdInput').value = '';
+    document.getElementById('newPwdConfirm').value = '';
+    document.getElementById('empId').focus();
+    return;
+  }
+  if (!data.role) {
+    console.error('finishLogin: data missing role property', data);
+    toast('Login failed: Invalid response format. Please contact administrator.', 'error');
+    logout();
+    return;
+  }
+
+  state.user = data;
+  state.role = data.role;
+  state.pendingLogin = null;
+  _saveSession(data);
+  localStorage.setItem('cms_last_emp', empId);
+  renderProfile();
+  document.getElementById('lookupCard').style.display = 'none';
+  document.getElementById('appShell').style.display = 'block';
+  document.getElementById('step1').style.display = 'block';
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('pwdInput').value = '';
+  document.getElementById('newPwdInput').value = '';
+  document.getElementById('newPwdConfirm').value = '';
+
+  if (data.role === 'Agent') {
+    state.upcoming = data.upcoming || [];
+    state.pendingReassigns = data.pendingReassigns || [];
+    renderAgentView();
+    document.getElementById('notifBellBtn').style.display = 'inline-flex';
+    loadNotificationTargets();
+    startNotificationPoller();
+    startSessionKeepAlive();
+    toast('Welcome, ' + (data.name || 'User').split(' ')[0] + '. (' + data.role + ')', 'ok');
+
+  } else if (data.role === 'QA') {
+    state.dashboard = { stats:{pending:0,completed:0,overdue:0,today:0,noAnswer:0}, entries:[], agents:[], lobs:[] };
+    renderQAView();
+    document.getElementById('notifBellBtn').style.display = 'inline-flex';
+    loadNotificationTargets();
+    startNotificationPoller();
+    startSessionKeepAlive();
+    toast('Welcome, ' + (data.name || 'User').split(' ')[0] + '. (' + data.role + ')', 'ok');
+    // Load QA dashboard async (same pattern as admin)
+    var qaHost = document.getElementById('qaTabHost');
+    if (qaHost) qaHost.innerHTML = '<div class="empty"><div class="spinner" style="margin:0 auto 10px;border-color:var(--brd);border-top-color:var(--pri)"></div><p>Loading dashboard data...</p></div>';
+    google.script.run
+      .withSuccessHandler(function(d) { state.dashboard = d; qaTab('dashboard'); toast('Dashboard loaded.', 'ok'); })
+      .withFailureHandler(function(err) { if (qaHost) qaHost.innerHTML = '<div class="empty">Could not load: ' + escape_(err.message) + '</div>'; })
+      .refreshQADashboard(data.emp, state.dashboardDays);
+
+  } else {
+    // ADMIN
+    renderAdminView();
+    document.getElementById('notifBellBtn').style.display = 'inline-flex';
+    loadNotificationTargets();
+    startNotificationPoller();
+    startSessionKeepAlive();
+    loadRoster();
+
+    toast('Welcome, ' + (data.name || 'User').split(' ')[0] + '. (' + data.role + ')', 'ok');
+
+    var host = document.getElementById('adminTabHost');
+    if (host) host.innerHTML = '<div class="empty"><div class="spinner" style="margin:0 auto 10px;border-color:rgba(0,0,0,.15);border-top-color:var(--pri)"></div><p>Loading dashboard data...</p></div>';
+
+    google.script.run
+      .withSuccessHandler(function(res) {
+        if (res && res.success && res.dashboard) {
+          state.dashboard = res.dashboard;
+          state.config = res.config || [];
+          adminTab('dashboard');
+          toast('Dashboard loaded. Pending: ' + (res.dashboard.stats ? res.dashboard.stats.pending : '0'), 'ok');
+        } else {
+          console.error('Dashboard load failed:', res);
+          toast('Could not load dashboard: ' + ((res && res.error) || 'Unknown error'), 'warn');
+          state.dashboard = { stats: { pending: 0, completed: 0, overdue: 0, today: 0, noAnswer: 0 }, entries: [], agents: [], lobs: [] };
+          adminTab('dashboard');
+        }
+      })
+      .withFailureHandler(function(err) {
+        console.error('Dashboard load error:', err);
+        toast('Failed to load dashboard: ' + err.message, 'error');
+        state.dashboard = { stats: { pending: 0, completed: 0, overdue: 0, today: 0, noAnswer: 0 }, entries: [], agents: [], lobs: [] };
+        adminTab('dashboard');
+      })
+      .loadAdminDashboard(data.emp, state.dashboardDays);
+  }
+}
+
+function logout(){
+  _clearSession();
+  if(state.countdownTicker)clearInterval(state.countdownTicker);
+  if(state.reminderPoller)clearInterval(state.reminderPoller);
+  if(state.notifPoller)clearInterval(state.notifPoller);
+  state.user=null;state.notifTargets=null;
+  document.getElementById('notifBellBtn').style.display='none';
+  document.getElementById('notifBellCount').style.display='none';
+  document.getElementById('appShell').style.display='none';
+  document.getElementById('lookupCard').style.display='flex';
+  document.getElementById('empId').focus();
+}
+
+function renderProfile(){
+  var u=state.user;
+  var av=document.getElementById('pAvatar');
+  av.textContent=initials(u.name);
+  av.className='avatar '+(u.role==='TL'?'tl':u.role==='TM'?'tm':u.role==='WFM'?'wfm':'');
+  document.getElementById('pName').textContent=u.name;
+  document.getElementById('pDesig').innerHTML='<b>'+escape_(u.designation||u.role)+'</b>';
+  document.getElementById('pLOB').innerHTML=u.lob?'LOB \u00B7 <b>'+escape_(u.lob)+'</b>':'';
+  document.getElementById('pEmail').textContent=u.advisorEmail||'';
+  var badge=document.getElementById('roleBadge');
+  badge.textContent=u.role;
+  badge.className='chip '+(u.role==='TL'?'chip-tl':u.role==='TM'?'chip-tm':u.role==='WFM'?'chip-wfm':u.role==='QA'?'chip-qa':'');
+  document.getElementById('changePwdBtn').style.display=(u.role==='Agent')?'none':'inline-flex';
+}
+
+
+
+// AGENT VIEW
+function renderAgentView(){
+  document.getElementById('adminView').style.display='none';
+  var host=document.getElementById('agentView');host.style.display='block';
+  var _tgt=Number(state.user.dailyTarget||8);var _tc=state.user.todayCount||0;var _pct=Math.min(100,Math.round(_tc/_tgt*100));var _dn=_tc>=_tgt;
+  var _tzBar=(function(){var tzHtml='<div class="tz-bar" id="tzBar"><div class="tz-bar-label">Live clocks:</div>';TZ_CONFIG.forEach(function(z){tzHtml+='<div id="'+z.id+'" class="tz-chip" title="'+z.note+'"></div>';});tzHtml+='</div>';return tzHtml;})();
+  host.innerHTML=_tzBar+'<div class="grid"><section class="card"><div class="card-head"><h2>Log a Callback</h2><span class="muted" id="todayCount">'+_tc+' / '+_tgt+' today</span></div><div class="progress-wrap"><div class="progress-label"><span>Daily progress</span><span>'+_pct+'%'+(_dn?' \u2713 Target hit!':'')+'</span></div><div class="progress-track"><div class="progress-fill'+(_dn?' done':'')+' " style="width:'+_pct+'%"></div></div></div><label>Case Number <span class="req">*</span></label><input id="caseNo" type="text" placeholder="Case #"><div class="two-col"><div><label>Date <span class="req">*</span></label><input id="cbDate" type="date" oninput="updateTzConverter()"></div><div><label>Time (IST) <span class="req">*</span></label><input id="cbTime" type="time" oninput="updateTzConverter()"></div><div id="tzConvert" class="tz-convert" style="display:none"></div></div><div class="chipstrip" id="timeChips"><button type="button" class="chip-btn" data-mins="15">+15m</button><button type="button" class="chip-btn" data-mins="30">+30m</button><button type="button" class="chip-btn" data-mins="60">+1h</button><button type="button" class="chip-btn" data-mins="120">+2h</button><button type="button" class="chip-btn" data-mins="240">+4h</button><button type="button" class="chip-btn" data-tomorrow="10:00">Tmrw 10 AM</button></div><label>Priority</label><div class="seg" id="prioSeg"><button type="button" data-v="Low">Low</button><button type="button" data-v="Medium" class="active">Medium</button><button type="button" data-v="High">High</button></div><div class="hint" id="prioHint" style="display:none"></div><label>Reason</label><select id="cbReason" onchange="onReasonChange()"><option>On-trip Issues</option><option>Call disconnected</option><option>User Busy</option><option>Mediation</option><option>Follow-up on another case</option><option>User is Outside Reasonable hours (ORH)</option><option>Not happy with the Resolution</option><option>Wants to speak another Ambassador</option><option>Bug update</option><option>Other</option></select><label>Notes <span id="notesReq" style="display:none" class="req">*</span></label><textarea id="notes" rows="2" placeholder="Optional context..."></textarea><div class="action-row"><button id="sBtn" class="btn btn-primary" onclick="submitForm()"><span class="btn-label">Submit Entry</span><span class="spinner" style="display:none"></span></button><button class="btn btn-ghost" onclick="clearForm()">Clear</button><button class="btn btn-ghost" onclick="agentQuickPing()" style="flex:0 0 auto">\uD83C\uDD98 Help</button><button class="btn btn-early btn-sm" onclick="openEarlyResolveModal()" style="flex:0 0 auto">&#8599; Called in early</button></div><div class="hint">Tip: <kbd>Ctrl</kbd>+<kbd>Enter</kbd> submits \u00B7 <kbd>Esc</kbd> clears</div></section><section class="card"><div class="tabs"><button class="tab active" data-tab="upcoming" onclick="agentTab(\'upcoming\')">Upcoming</button><button class="tab" data-tab="history" onclick="agentTab(\'history\')">History</button><button class="tab" data-tab="mystats" onclick="agentTab(\'mystats\')">\uD83D\uDCCA My Stats</button></div><div id="agentTabHost"></div></section></div><div id="pendingReassignBanner" class="reassign-banner" style="display:none"></div>';
+  document.getElementById('cbDate').valueAsDate=new Date();
+  bindPriority();bindTimeChips();bindKeyboard();
+  agentTab('upcoming');startCountdownTicker();startReminderCheck();checkPendingReassigns();
+}
+function agentTab(which){
+  var tabs=document.querySelectorAll('#agentView .tab');
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.toggle('active',tabs[i].getAttribute('data-tab')===which);
+  if(which==='upcoming'){document.getElementById('agentTabHost').innerHTML='<div id="upcomingList" class="list"></div>';renderUpcoming();}
+  else if(which==='mystats'){renderMyStats();}
+  else{document.getElementById('agentTabHost').innerHTML='<input id="historyQuery" type="text" placeholder="Search case #, reason, notes..." oninput="debouncedSearch()"><div id="historyList" class="list" style="margin-top:10px"></div>';searchHistory();}
+}
+function renderMyStats(){
+  var host=document.getElementById('agentTabHost');
+  host.innerHTML='<div style="text-align:center;padding:30px;color:var(--mut)">Loading your stats...</div>';
+  google.script.run
+    .withSuccessHandler(function(s){
+      if(!s){host.innerHTML='<div class="empty">No stats available yet.</div>';return;}
+      var tot=s.total||0;
+      var compRate=tot>0?Math.round(s.completed/tot*100):0;
+      var naRate=tot>0?Math.round(s.noAnswer/tot*100):0;
+      var avgResp=s.avgResponseMins>0?(s.avgResponseMins>=60?Math.floor(s.avgResponseMins/60)+'h '+Math.round(s.avgResponseMins%60)+'m':Math.round(s.avgResponseMins)+'m'):'N/A';
+      var trend='';
+      if(s.weeklyTrend&&s.weeklyTrend.length){
+        var maxV=Math.max.apply(null,s.weeklyTrend.map(function(d){return d.count;}));if(!maxV)maxV=1;
+        trend='<div style="margin-top:18px"><h3>This week &#8212; daily callbacks</h3><div class="perf-chart">';
+        var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        for(var i=0;i<s.weeklyTrend.length;i++){
+          var d=s.weeklyTrend[i];
+          var barH=Math.round(d.count/maxV*100);
+          trend+='<div class="perf-bar-wrap"><div class="perf-bar-outer"><div class="perf-bar-fill'+(d.isToday?' today':'')+'" style="height:'+barH+'%"></div></div><div class="perf-bar-val">'+d.count+'</div><div class="perf-bar-lbl">'+(days[i]||'')+'</div></div>';
+        }
+        trend+='</div></div>';
+      }
+      host.innerHTML=
+        '<div class="perf-stats">'+
+        '<div class="perf-card"><div class="perf-val">'+s.thisWeek+'</div><div class="perf-lbl">This week</div></div>'+
+        '<div class="perf-card"><div class="perf-val">'+s.today+'</div><div class="perf-lbl">Today</div></div>'+
+        '<div class="perf-card"><div class="perf-val" style="color:var(--ok)">'+compRate+'%</div><div class="perf-lbl">Completion rate</div></div>'+
+        '<div class="perf-card"><div class="perf-val" style="color:var(--warn)">'+naRate+'%</div><div class="perf-lbl">No-answer rate</div></div>'+
+        '<div class="perf-card"><div class="perf-val">'+avgResp+'</div><div class="perf-lbl">Avg response time</div></div>'+
+        '</div>'+trend+
+        '<div style="margin-top:14px"><h3>Last 30 days</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">'+
+        '<div style="padding:12px;background:var(--ok-b);border-radius:var(--r);border:1px solid var(--ok)"><b style="color:var(--ok-t);font-size:20px">'+s.completed+'</b><div class="muted" style="font-size:11px;margin-top:2px">Completed</div></div>'+
+        '<div style="padding:12px;background:var(--warn-b);border-radius:var(--r);border:1px solid var(--warn)"><b style="color:var(--warn-t);font-size:20px">'+s.noAnswer+'</b><div class="muted" style="font-size:11px;margin-top:2px">No Answer</div></div>'+
+        '<div style="padding:12px;background:var(--err-b);border-radius:var(--r);border:1px solid var(--err)"><b style="color:var(--err-t);font-size:20px">'+s.pending+'</b><div class="muted" style="font-size:11px;margin-top:2px">Still pending</div></div>'+
+        '<div style="padding:12px;background:var(--card);border-radius:var(--r);border:1px solid var(--brd2)"><b style="font-size:20px">'+tot+'</b><div class="muted" style="font-size:11px;margin-top:2px">Total logged</div></div>'+
+        '</div></div>';
+    })
+    .withFailureHandler(function(err){host.innerHTML='<div class="empty">Could not load stats: '+escape_(err.message)+'</div>';})
+    .getAgentStats(state.user.emp);
+}
+
+// QA VIEW
+function renderQAView(){
+  document.getElementById('agentView').style.display='none';
+  var host=document.getElementById('adminView');host.style.display='block';
+  var tabs=['dashboard','entries','agents','qa-export'];
+  var tabHTML='';
+  for(var i=0;i<tabs.length;i++) tabHTML+='<button class="tab '+(tabs[i]==='dashboard'?'active':'')+'" data-tab="'+tabs[i]+'" onclick="qaTab(this.getAttribute(\'data-tab\'))">'+tabLabel(tabs[i])+'</button>';
+  host.innerHTML='<div class="role-banner qa"><b>Quality Analyst \u2014 Read-Only View</b> \u2014 Full visibility across all LOBs. No edits, deletes or audit access.</div>'+
+    '<div class="card"><div class="tabs">'+tabHTML+'</div><div id="qaTabHost"></div></div>';
+  qaTab('dashboard');
+}
+function qaTab(which){
+  var tabs=document.querySelectorAll('#adminView .tab');
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.toggle('active',tabs[i].getAttribute('data-tab')===which);
+  var host=document.getElementById('qaTabHost');
+  if(which==='dashboard')    host.innerHTML=renderQADashboardHTML();
+  else if(which==='entries'){host.innerHTML=renderQAEntriesHTML();bindQAEntriesFilters();}
+  else if(which==='agents')  host.innerHTML=renderQAAgentsHTML();
+  else if(which==='qa-export') host.innerHTML=renderQAExportHTML();
+}
+function renderQADashboardHTML(){
+  var s=state.dashboard.stats;var days=state.dashboard.daysFilter||state.dashboardDays;
+  var agRows='';var agents=state.dashboard.agents.slice(0,10);
+  for(var i=0;i<agents.length;i++) agRows+='<tr><td><b>'+escape_(agents[i].name)+'</b><div class="muted" style="font-size:11px">'+agents[i].emp+'</div></td><td>'+agents[i].pending+'</td><td style="color:'+(agents[i].overdue?'var(--err)':'var(--mut)')+'">'+agents[i].overdue+'</td><td style="color:var(--ok)">'+agents[i].completed+'</td><td>'+agents[i].noAnswer+'</td></tr>';
+  var lobRows='';var lobs=state.dashboard.lobs.slice(0,8);
+  for(var j=0;j<lobs.length;j++) lobRows+='<tr><td><b>'+escape_(lobs[j].lob)+'</b></td><td>'+lobs[j].pending+'</td><td style="color:'+(lobs[j].overdue?'var(--err)':'var(--mut)')+'">'+lobs[j].overdue+'</td><td style="color:var(--ok)">'+lobs[j].completed+'</td></tr>';
+  return '<div class="filter-bar" style="margin-bottom:14px"><label style="margin:0;font-size:13px;font-weight:600;color:var(--txt)">Date range:</label>'+
+    '<select id="qaDashDays" onchange="onQADashDaysChange()" style="flex:0 0 auto;min-width:150px">'+
+    '<option value="7" '+(days===7?'selected':'')+'>Last 7 days</option>'+
+    '<option value="30" '+(days===30?'selected':'')+'>Last 30 days</option>'+
+    '<option value="90" '+(days===90?'selected':'')+'>Last 90 days</option>'+
+    '<option value="180" '+(days===180?'selected':'')+'>Last 180 days</option></select>'+
+    '<span class="muted" style="font-size:12px">'+(state.dashboard.queryMs||0)+'ms</span>'+
+    '<button class="btn btn-ghost btn-sm" onclick="refreshQADashboard()" style="margin-left:auto">\u21BB Refresh</button></div>'+
+    '<div class="stat-grid"><div class="stat"><div class="stat-val">'+s.pending+'</div><div class="stat-lbl">Pending</div></div>'+
+    '<div class="stat"><div class="stat-val" style="color:var(--err)">'+s.overdue+'</div><div class="stat-lbl">Overdue</div></div>'+
+    '<div class="stat"><div class="stat-val" style="color:var(--ok)">'+s.completed+'</div><div class="stat-lbl">Completed</div></div>'+
+    '<div class="stat"><div class="stat-val" style="color:var(--warn)">'+s.noAnswer+'</div><div class="stat-lbl">No Answer</div></div>'+
+    '<div class="stat"><div class="stat-val">'+s.today+'</div><div class="stat-lbl">Today</div></div></div>'+
+    '<div class="grid"><div><h3>All agents by load</h3><div class="tbl-wrap"><table class="data"><thead><tr><th>Agent</th><th>Pending</th><th>Overdue</th><th>Done</th><th>No Answer</th></tr></thead><tbody>'+(agRows||'<tr><td colspan="5" class="empty">No data</td></tr>')+'</tbody></table></div></div>'+
+    '<div><h3>By LOB</h3><div class="tbl-wrap"><table class="data"><thead><tr><th>LOB</th><th>Pending</th><th>Overdue</th><th>Done</th></tr></thead><tbody>'+(lobRows||'<tr><td colspan="4" class="empty">No data</td></tr>')+'</tbody></table></div></div></div>';
+}
+function onQADashDaysChange(){var d=Number(document.getElementById('qaDashDays').value)||30;state.dashboardDays=d;localStorage.setItem('cms_dashboard_days',String(d));refreshQADashboard();}
+function refreshQADashboard(){
+  google.script.run.withSuccessHandler(function(d){state.dashboard=d;qaTab('dashboard');toast('Refreshed ('+(d.queryMs||0)+'ms).','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).refreshQADashboard(state.user.emp,state.dashboardDays);
+}
+function renderQAEntriesHTML(){
+  return '<div class="filter-bar"><input id="qaSearch" placeholder="Search case, agent, reason, notes...">'+
+    '<select id="qaStatus"><option value="all">All statuses</option><option value="Pending">Pending</option><option value="Completed">Completed</option><option value="Rescheduled">Rescheduled</option></select>'+
+    '<select id="qaAgent"><option value="">All agents</option></select><select id="qaLOB"><option value="">All LOBs</option></select>'+
+    '<select id="qaFlagFilter"><option value="all">All entries</option><option value="flagged">\uD83D\uDEA9 Flagged</option><option value="unflagged">Unflagged</option></select>'+
+    '<button class="btn btn-ghost btn-sm" onclick="refreshQADashboard()">\u21BB Refresh</button></div>'+
+    '<div class="tbl-wrap"><table class="data" id="qaEntriesTbl"><thead><tr><th>Case</th><th>Agent</th><th>LOB</th><th>Date/Time</th><th>Priority</th><th>Reason / Notes</th><th>Status</th><th>\uD83D\uDEA9 Flag</th></tr></thead><tbody></tbody></table></div>'+
+    '<div class="hint" style="margin-top:8px" id="qaEntriesCount"></div>';
+}
+function bindQAEntriesFilters(){
+  var agSel=document.getElementById('qaAgent');var lobSel=document.getElementById('qaLOB');
+  var seenAg={};var seenLob={};
+  for(var i=0;i<state.dashboard.entries.length;i++){
+    var e=state.dashboard.entries[i];
+    if(!seenAg[e.agent]){seenAg[e.agent]=1;var o=document.createElement('option');o.value=e.agent;o.textContent=e.agent;agSel.appendChild(o);}
+    if(e.lob&&!seenLob[e.lob]){seenLob[e.lob]=1;var ol=document.createElement('option');ol.value=e.lob;ol.textContent=e.lob;lobSel.appendChild(ol);}
+  }
+  document.getElementById('qaSearch').oninput=renderQAEntriesTable;
+  document.getElementById('qaStatus').onchange=renderQAEntriesTable;
+  document.getElementById('qaAgent').onchange=renderQAEntriesTable;
+  document.getElementById('qaLOB').onchange=renderQAEntriesTable;
+  renderQAEntriesTable();
+}
+function renderQAEntriesTable(){
+  var search=(document.getElementById('qaSearch').value||'').toLowerCase();
+  var status=document.getElementById('qaStatus').value;
+  var agent=document.getElementById('qaAgent').value;
+  var lob=document.getElementById('qaLOB').value;
+  var flagF=(document.getElementById('qaFlagFilter')||{value:'all'}).value;
+  var rows=[];
+  for(var i=0;i<state.dashboard.entries.length;i++){
+    var e=state.dashboard.entries[i];
+    if(status!=='all'&&e.status!==status)continue;
+    if(agent&&e.agent!==agent)continue;
+    if(lob&&e.lob!==lob)continue;
+    if(search&&(e.caseNo+' '+e.agent+' '+(e.reason||'')+' '+(e.notes||'')).toLowerCase().indexOf(search)===-1)continue;
+    var isFl=!!(state.qaFlags&&state.qaFlags[e.entryId]);
+    if(flagF==='flagged'&&!isFl)continue;
+    if(flagF==='unflagged'&&isFl)continue;
+    rows.push(e);
+  }
+  var body='';
+  for(var j=0;j<Math.min(rows.length,500);j++){
+    var e=rows[j];var sc=e.status==='Completed'?'chip-ok':e.overdue?'chip-bad':e.status==='Rescheduled'?'chip-warn':'';
+    var fl=state.qaFlags&&state.qaFlags[e.entryId];
+    var flCell=fl?'<span class="flag-badge" onclick="openQAFlagModal(\''+e.entryId+'\')" title="'+escape_(fl.reason)+'">\uD83D\uDEA9 '+escape_(fl.reason.substring(0,16))+(fl.reason.length>16?'\u2026':'')+'</span>':'<button class="btn btn-ghost btn-sm" style="padding:3px 8px;font-size:11px" onclick="openQAFlagModal(\''+e.entryId+'\')">\uD83D\uDEA9</button>';
+    var nt=e.notes?'<div class="muted" style="font-size:11px;margin-top:2px">'+escape_(e.notes.substring(0,50))+(e.notes.length>50?'\u2026':'')+'</div>':'';
+    body+='<tr><td><b style="font-family:monospace">#'+escape_(e.caseNo)+'</b><div class="muted" style="font-size:11px">'+e.entryId+'</div></td><td>'+escape_(e.agent)+'</td><td>'+escape_(e.lob||'\u2014')+'</td><td>'+e.cbDate+'<div class="muted" style="font-size:11px">'+e.cbTime+'</div></td><td>'+e.priority+'</td><td>'+escape_(e.reason||'\u2014')+nt+'</td><td><span class="chip '+sc+'">'+e.status+(e.overdue?' \u00B7 overdue':'')+'</span></td><td>'+flCell+'</td></tr>';
+  }
+  document.querySelector('#qaEntriesTbl tbody').innerHTML=body||'<tr><td colspan="8" class="empty">No matching entries</td></tr>';
+  var fc=state.qaFlags?Object.keys(state.qaFlags).length:0;
+  document.getElementById('qaEntriesCount').innerHTML='Showing '+Math.min(rows.length,500)+' of '+rows.length+' entries.'+(fc?' &nbsp;<span class="flag-badge">\uD83D\uDEA9 '+fc+' flagged</span>':'')+' &nbsp;<i style="color:var(--mut)">Read-only. Use \uD83D\uDEA9 to flag audit concerns for TL/WFM.</i>';
+}
+function renderQAAgentsHTML(){
+  var rows='';var agents=state.dashboard.agents||[];
+  for(var i=0;i<agents.length;i++){var a=agents[i];rows+='<tr><td><b>'+escape_(a.name)+'</b><div class="muted" style="font-size:11px">'+a.emp+'</div></td><td>'+a.pending+'</td><td style="color:'+(a.overdue?'var(--err)':'var(--mut)')+'">'+a.overdue+'</td><td style="color:var(--ok)">'+a.completed+'</td><td>'+a.noAnswer+'</td></tr>';}
+  return '<div class="tbl-wrap"><table class="data"><thead><tr><th>Agent</th><th>Pending</th><th>Overdue</th><th>Completed</th><th>No Answer</th></tr></thead><tbody>'+(rows||'<tr><td colspan="5" class="empty">No data</td></tr>')+'</tbody></table></div><div class="hint" style="margin-top:8px"><i>Read-only \u2014 QA cannot reassign, nudge or take actions.</i></div>';
+}
+function renderQAExportHTML(){
+  var today=new Date().toISOString().substring(0,10);
+  var wa=new Date(Date.now()-30*86400000).toISOString().substring(0,10);
+  return '<h3>Full Export Dump</h3><div class="role-banner qa" style="margin-bottom:14px">\u2757 Full export across all LOBs \u2014 safe fields only, no password data. All exports are audit-logged.</div><div class="two-col"><div><label>From</label><input id="qaExpFrom" type="date" value="'+wa+'"></div><div><label>To</label><input id="qaExpTo" type="date" value="'+today+'"></div></div><div class="action-row"><button class="btn btn-primary" onclick="doQAExport()">Download CSV</button></div>';
+}
+function doQAExport(){
+  var from=document.getElementById('qaExpFrom').value;var to=document.getElementById('qaExpTo').value;
+  toast('Generating full export\u2026','ok');
+  google.script.run.withSuccessHandler(function(csv){var b=new Blob([csv],{type:'text/csv;charset=utf-8'});var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;a.download='cms_qa_fulldump_'+from+'_'+to+'.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);toast('Downloaded.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).qaExportCSV(state.user.emp,from,to);
+}
+
+
+// ADMIN VIEW
+function renderAdminView(){
+  document.getElementById('agentView').style.display='none';
+  var host=document.getElementById('adminView');host.style.display='block';
+  var r=state.user.role;
+  var rLabel=r==='TL'?'Supervisor':r==='TM'?'Manager':'WFM Admin';
+  var scope=r==='TL'?'your team':r==='TM'?'your managed teams':'all LOBs';
+  var tabs=['dashboard','entries','agents'];
+  if(r==='WFM')tabs=tabs.concat(['config','audit','impersonate','credentials']);
+  if(r==='TM'||r==='WFM')tabs.push('export');
+  var tabHTML='';
+  for(var i=0;i<tabs.length;i++)tabHTML+='<button class="tab '+(tabs[i]==='dashboard'?'active':'')+'" data-tab="'+tabs[i]+'" onclick="adminTab(\''+tabs[i]+'\')">'+tabLabel(tabs[i])+'</button>';
+  host.innerHTML='<div class="role-banner '+r.toLowerCase()+'"><b>'+rLabel+' mode</b> \u2014 manage callbacks within '+scope+'. All actions are audit-logged.</div>' +
+    '<div class="card">' +
+    '<div style="margin-bottom:12px;text-align:right"><button class="btn btn-primary btn-sm" onclick="manualRefreshDashboard()">\u21BB Refresh Dashboard</button></div>' +
+    '<div class="tabs">'+tabHTML+'</div>' +
+    '<div id="adminTabHost"><div class="empty">Loading\u2026</div></div>' +
+    '</div>';
+}
+
+function manualRefreshDashboard() {
+  toast('Loading dashboard...', 'ok');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      if (res && res.success && res.dashboard) {
+        state.dashboard = res.dashboard;
+        var activeTab = document.querySelector('#adminView .tab.active');
+        if (activeTab) {
+          adminTab(activeTab.getAttribute('data-tab'));
+        } else {
+          adminTab('dashboard');
+        }
+        toast('Dashboard loaded. Pending: ' + (res.dashboard.stats ? res.dashboard.stats.pending : '0'), 'ok');
+      } else {
+        toast('Failed to load dashboard: ' + ((res && res.error) || 'Unknown error'), 'error');
+      }
+    })
+    .withFailureHandler(function(err) {
+      toast('Error: ' + err.message, 'error');
+    })
+    .loadAdminDashboard(state.user.emp, state.dashboardDays);
+}
+
+function tabLabel(t){var m={dashboard:'Dashboard',entries:'All Entries',agents:'By Agent',config:'\u2699 Config',audit:'\uD83D\uDCCB Audit',impersonate:'\uD83D\uDC65 Impersonate',credentials:'\uD83D\uDD12 Credentials',export:'\u2193 Export','qa-export':'\u2193 Export Dump'};return m[t]||t;}
+
+function adminTab(which){
+  var tabs=document.querySelectorAll('#adminView .tab');
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.toggle('active',tabs[i].getAttribute('data-tab')===which);
+  var host=document.getElementById('adminTabHost');
+
+  if(which==='dashboard') {
+    if(!state.dashboard || !state.dashboard.stats) {
+      host.innerHTML='<div class="empty">Dashboard data not available yet. Please wait or refresh.</div>';
+      return;
+    }
+    host.innerHTML=renderDashboardHTML();
+  }
+  else if(which==='entries'){
+    if(!state.dashboard || !state.dashboard.entries) {
+      host.innerHTML='<div class="empty">Loading entries...</div>';
+      return;
+    }
+    host.innerHTML=renderEntriesHTML();
+    bindEntriesFilters();
+  }
+  else if(which==='agents'){
+    if(!state.dashboard || !state.dashboard.agents) {
+      host.innerHTML='<div class="empty">Loading agents...</div>';
+      return;
+    }
+    host.innerHTML=renderAgentsHTML();
+  }
+  else if(which==='config')host.innerHTML=renderConfigHTML();
+  else if(which==='audit'){host.innerHTML='<div class="empty">Loading\u2026</div>';loadAuditTail();}
+  else if(which==='impersonate')host.innerHTML=renderImpersonateHTML();
+  else if(which==='credentials'){host.innerHTML='<div class="empty">Loading\u2026</div>';loadCredentials();}
+  else if(which==='export')host.innerHTML=renderExportHTML();
+}
+
+
+function renderDashboardHTML(){
+  if (!state.dashboard || !state.dashboard.stats) {
+    return '<div class="empty">Dashboard data not available. Please refresh.</div>';
+  }
+
+  var s=state.dashboard.stats;
+  var days=state.dashboard.daysFilter||state.dashboardDays;
+  var pb=state.dashboard.partial?'<div class="role-banner tm" style="margin-bottom:12px">\u26A0\uFE0F Partial results \u2014 try a smaller date range.</div>':'';
+  var agRows='';var agents=(state.dashboard.agents||[]).slice(0,8);
+  for(var i=0;i<agents.length;i++)agRows+='<tr><td><b>'+escape_(agents[i].name)+'</b><td>'+agents[i].pending+'<td style="color:'+(agents[i].overdue?'var(--err)':'var(--mut)')+'">'+agents[i].overdue+'<td style="color:var(--ok)">'+agents[i].completed+'</tr>';
+  var lobRows='';var lobs=(state.dashboard.lobs||[]).slice(0,5);
+  for(var j=0;j<lobs.length;j++)lobRows+='<tr><td><b>'+escape_(lobs[j].lob)+'</b><td>'+lobs[j].pending+'<td style="color:'+(lobs[j].overdue?'var(--err)':'var(--mut)')+'">'+lobs[j].overdue+'<td style="color:var(--ok)">'+lobs[j].completed+'</tr>';
+  var lobGrid=state.user.role!=='TL'?'<div><h3>By LOB</h3><div class="tbl-wrap"><table class="data"><thead><tr><th>LOB</th><th>P</th><th>O</th><th>\u2713</th></tr></thead><tbody>'+(lobRows||'<tr><td colspan="4" class="empty">No data</tr>')+'</tbody></table></div></div>':'';
+
+  var repeatWarn='';
+  if(state.user.role==='WFM' && state.dashboard.repeatOffenders && state.dashboard.repeatOffenders.length){
+    var ro=state.dashboard.repeatOffenders;
+    var roRows='';
+    for(var ri=0;ri<ro.length;ri++){
+      roRows+='<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--brd2);flex-wrap:wrap">'+
+        '<span style="font-family:monospace;font-weight:700">#'+escape_(ro[ri].caseNo)+'</span>'+
+        '<span class="chip chip-bad">'+ro[ri].count+'x rescheduled</span>'+
+        '<span class="muted" style="font-size:12px">'+escape_(ro[ri].agents.slice(0,3).join(', '))+(ro[ri].agents.length>3?' +'+(ro[ri].agents.length-3)+' more':'')+'</span>'+
+        '<span class="muted" style="font-size:11px;margin-left:auto">Last: '+escape_(ro[ri].lastDate)+'</span></div>';
+    }
+    repeatWarn='<div style="margin-bottom:14px;border:1px solid var(--err);border-radius:var(--r);overflow:hidden">'+
+      '<div style="padding:10px 14px;background:var(--err-b);display:flex;align-items:center;gap:8px">'+
+      '<span style="font-size:16px">&#9888;</span>'+
+      '<b style="color:var(--err-t)">Repeat escalations detected</b>'+
+      '<span class="muted" style="font-size:12px;margin-left:6px">'+ro.length+' case'+(ro.length>1?'s':'')+' rescheduled 3+ times</span></div>'+
+      roRows+'</div>';
+  }
+
+  var sSafe = s || { pending: 0, completed: 0, overdue: 0, today: 0, noAnswer: 0 };
+
+  return repeatWarn+pb+'<div class="filter-bar" style="margin-bottom:14px"><label style="margin:0;text-transform:none;font-size:13px;color:var(--txt)">Date range:</label><select id="dashDays" onchange="onDashDaysChange()" style="flex:0 0 auto;min-width:150px"><option value="7" '+(days===7?'selected':'')+'>Last 7 days</option><option value="30" '+(days===30?'selected':'')+'>Last 30 days</option><option value="90" '+(days===90?'selected':'')+'>Last 90 days</option><option value="180" '+(days===180?'selected':'')+'>Last 180 days</option></select><span class="muted" style="font-size:12px">'+(state.dashboard.queryMs||0)+'ms</span><button class="btn btn-ghost btn-sm" onclick="refreshDashboard()" style="margin-left:auto">\u21BB Refresh</button></div><div class="stat-grid"><div class="stat"><div class="stat-val">'+sSafe.pending+'</div><div class="stat-lbl">Pending</div></div><div class="stat"><div class="stat-val" style="color:var(--err)">'+sSafe.overdue+'</div><div class="stat-lbl">Overdue</div></div><div class="stat"><div class="stat-val" style="color:var(--ok)">'+sSafe.completed+'</div><div class="stat-lbl">Completed</div></div><div class="stat"><div class="stat-val" style="color:var(--warn)">'+sSafe.noAnswer+'</div><div class="stat-lbl">No Answer</div></div><div class="stat"><div class="stat-val">'+sSafe.today+'</div><div class="stat-lbl">Today</div></div></div><div class="grid"><div><h3>Top agents by load</h3><div class="tbl-wrap"><table class="data"><thead><tr><th>Agent</th><th>P</th><th>O</th><th>\u2713</th></tr></thead><tbody>'+(agRows||'<tr><td colspan="4" class="empty">No data</tr>')+'</tbody></table></div></div>'+lobGrid+'</div>';
+}
+
+function onDashDaysChange(){var d=Number(document.getElementById('dashDays').value)||30;state.dashboardDays=d;localStorage.setItem('cms_dashboard_days',String(d));refreshDashboard();}
+
+function renderEntriesHTML(){
+  return '<div class="filter-bar"><input id="fSearch" placeholder="Search case, agent, reason..."><select id="fStatus"><option value="all">All statuses</option><option value="Pending">Pending</option><option value="Completed">Completed</option><option value="Rescheduled">Rescheduled</option></select><select id="fAgent"><option value="">All agents</option></select><button class="btn btn-ghost btn-sm" onclick="refreshDashboard()">\u21BB Refresh</button></div>'+
+    '<div class="bulk-bar" id="bulkBar"><span id="bulkCount">0 selected</span><button class="btn btn-ok btn-sm" onclick="bulkComplete()">\u2713 Mark Complete</button><button class="btn btn-ghost btn-sm" onclick="bulkReassignModal()">\u2194 Reassign</button><button class="btn btn-ghost btn-sm" onclick="bulkClear()">\u2715 Clear</button></div>'+
+    '<div class="tbl-wrap"><table class="data" id="entriesTbl"><thead><tr><th style="width:32px"><input type="checkbox" class="bulk-cb" id="bulkAll" onchange="bulkToggleAll(this)"></th><th>Case</th><th>Agent</th><th>Date/Time</th><th>Priority</th><th>Reason</th><th>Status / SLA</th><th>Actions</th></tr></thead><tbody></tbody></table></div>'+
+    '<div class="hint" style="margin-top:8px" id="entriesCount"></div>';
+}
+function bindEntriesFilters(){
+  var sel=document.getElementById('fAgent');var seen={};
+  for(var i=0;i<state.dashboard.entries.length;i++){var a=state.dashboard.entries[i].agent;if(!seen[a]){seen[a]=1;var o=document.createElement('option');o.value=a;o.textContent=a;sel.appendChild(o);}}
+  document.getElementById('fSearch').oninput=renderEntriesTable;
+  document.getElementById('fStatus').onchange=renderEntriesTable;
+  document.getElementById('fAgent').onchange=renderEntriesTable;
+  renderEntriesTable();
+}
+
+function renderEntriesTable(){
+  var search=(document.getElementById('fSearch').value||'').toLowerCase();
+  var status=document.getElementById('fStatus').value;
+  var agent=document.getElementById('fAgent').value;
+  var rows=[];
+  for(var i=0;i<state.dashboard.entries.length;i++){
+    var e=state.dashboard.entries[i];
+    if(status!=='all'&&e.status!==status)continue;
+    if(agent&&e.agent!==agent)continue;
+    if(search&&(e.caseNo+' '+e.agent+' '+(e.reason||'')+' '+(e.notes||'')).toLowerCase().indexOf(search)===-1)continue;
+    rows.push(e);
+  }
+  var body='';var _now=Date.now();
+  for(var j=0;j<Math.min(rows.length,300);j++){
+    var e=rows[j];
+    var sc=e.status==='Completed'?'chip-ok':e.overdue?'chip-bad':e.status==='Rescheduled'?'chip-warn':'';
+    var _sched=e.scheduled;
+    if(!_sched&&e.cbDate&&e.cbTime){try{var _dp=e.cbDate.split('-');var _tp=e.cbTime.split(':');_sched=new Date(_dp[0],_dp[1]-1,_dp[2],_tp[0]||0,_tp[1]||0).getTime();}catch(ex){}}
+    var sla='';if(e.status==='Pending'&&e.overdue&&_sched){var od=Math.round((_now-_sched)/60000);if(od>0)sla='<div style="margin-top:3px"><span class="sla-chip">'+(od>=60?Math.floor(od/60)+'h '+(od%60)+'m':od+'m')+' overdue</span></div>';}
+    var acts=e.status==='Pending'
+      ?'<button class="btn btn-ok btn-sm" onclick="adminDone(\''+e.entryId+'\')" title="Mark complete">\u2713</button>'+
+       '<button class="btn btn-ghost btn-sm" onclick="adminEditModal(\''+e.entryId+'\')" title="Edit">\u270E</button>'+
+       '<button class="btn btn-ghost btn-sm" onclick="adminNudgeModal(\''+e.entryId+'\')" title="Nudge agent">\uD83D\uDD14</button>'+
+       '<button class="btn btn-ghost btn-sm" onclick="adminReassignModal(\''+e.entryId+'\')" title="Reassign">\u2194</button>'
+      :'';
+    var cbHtml=e.status==='Pending'?'<input type="checkbox" class="bulk-cb entry-cb" data-id="'+e.entryId+'" onchange="bulkCheckChanged()">':'<input type="checkbox" class="bulk-cb" disabled>';
+    body+='<tr><td>'+cbHtml+'</td><td><b style="font-family:monospace">#'+escape_(e.caseNo)+'</b><div class="muted" style="font-size:11px">'+e.entryId+'</div></td><td>'+escape_(e.agent)+'<div class="muted" style="font-size:11px">'+escape_(e.lob)+'</div></td><td>'+e.cbDate+'<div class="muted" style="font-size:11px">'+e.cbTime+'</div></td><td>'+e.priority+'</td><td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+escape_(e.reason||'')+'</td><td><span class="chip '+sc+'">'+e.status+(e.overdue?' \u00B7 overdue':'')+'</span>'+sla+'</td><td>'+acts+'<button class="btn btn-danger btn-sm" onclick="adminDeleteConfirm(\''+e.entryId+'\')" title="Delete">\uD83D\uDDD1</button></td></tr>';
+  }
+  document.querySelector('#entriesTbl tbody').innerHTML=body||'<tr><td colspan="8" class="empty">No matching entries</td></tr>';
+  document.getElementById('entriesCount').textContent='Showing '+Math.min(rows.length,300)+' of '+rows.length+' entries.';
+}
+
+function renderAgentsHTML(){
+  var rows='';var agents=state.dashboard.agents||[];
+  for(var i=0;i<agents.length;i++){var a=agents[i];rows+='<tr><td><b>'+escape_(a.name)+'</b><div class="muted" style="font-size:11px">'+a.emp+'</div></td><td>'+a.pending+'</td><td style="color:'+(a.overdue?'var(--err)':'var(--mut)')+'">'+a.overdue+'</td><td style="color:var(--ok)">'+a.completed+'</td><td>'+a.noAnswer+'</td><td><button class="btn btn-ghost btn-sm" onclick="filterEntriesByAgent(\''+escape_(a.name).replace(/'/g,'&#39;')+'\')">View</button>'+(state.user.role==='WFM'?'<button class="btn btn-ghost btn-sm" onclick="impersonate(\''+a.emp+'\')">Impersonate</button>':'')+'</td></tr>';}
+  return '<div class="tbl-wrap"><table class="data"><thead><tr><th>Agent</th><th>Pending</th><th>Overdue</th><th>Completed</th><th>No Answer</th><th>Actions</th></tr></thead><tbody>'+(rows||'<tr><td colspan="6" class="empty">No data</td></tr>')+'</tbody></table></div>';
+}
+function filterEntriesByAgent(name){adminTab('entries');setTimeout(function(){document.getElementById('fAgent').value=name;renderEntriesTable();},100);}
+
+function renderConfigHTML(){
+  var rows='';for(var i=0;i<state.config.length;i++){var c=state.config[i];rows+='<div class="config-row"><span class="config-key">'+escape_(c.key)+'</span><input type="text" value="'+escape_(c.value)+'" id="cfg-'+i+'"><button class="btn btn-primary btn-sm" onclick="saveConfig(\''+escape_(c.key).replace(/'/g,'&#39;')+'\','+i+')">Save</button></div>';}
+  return '<h3>Live configuration</h3><div id="configRows">'+rows+'</div><div style="margin-top:16px;padding:12px;background:var(--hov);border-radius:var(--r);border:1px solid var(--brd)"><b style="font-size:12px">Add new key:</b><div class="filter-bar" style="margin-top:8px"><input id="newKey" placeholder="KEY_NAME"><input id="newVal" placeholder="value"><button class="btn btn-primary btn-sm" onclick="saveNewConfig()">Add</button></div></div>';
+}
+function saveConfig(key,idx){var val=document.getElementById('cfg-'+idx).value;google.script.run.withSuccessHandler(function(res){state.config=res.config;toast('Saved '+key,'ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminUpdateConfig(state.user.emp,key,val);}
+function saveNewConfig(){var k=document.getElementById('newKey').value.trim();var v=document.getElementById('newVal').value;if(!k)return toast('Key required','warn');google.script.run.withSuccessHandler(function(res){state.config=res.config;adminTab('config');toast('Added '+k,'ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminUpdateConfig(state.user.emp,k,v);}
+
+function loadAuditTail(){
+  google.script.run.withSuccessHandler(function(rows){
+    var h='<h3>Recent audit events (last 50)</h3><div class="list" style="max-height:560px">';
+    for(var i=0;i<rows.length;i++)h+='<div class="audit-row"><span class="ts">'+escape_(rows[i].ts)+'</span><span class="action">'+escape_(rows[i].action)+'</span><span>'+escape_(rows[i].empId)+' '+(rows[i].entryId?'#'+escape_(rows[i].entryId):'')+' \u2014 '+escape_(rows[i].details||'')+'<span class="muted" style="font-size:11px;display:block">'+escape_(rows[i].user||'')+'</span></span></div>';
+    h+='</div><div style="margin-top:12px"><button class="btn btn-ghost btn-sm" onclick="loadAuditTail()">\u21BB Refresh</button></div>';
+    document.getElementById('adminTabHost').innerHTML=h||'<div class="empty">No audit events</div>';
+  }).withFailureHandler(function(err){toast(err.message,'error');}).adminGetAuditTail(state.user.emp,50);
+}
+
+function renderImpersonateHTML(){return '<h3>View portal as another agent</h3><p class="muted" style="margin-bottom:12px">All impersonations are audit-logged.</p><div class="row"><input id="impEmp" placeholder="Agent emp code" onkeydown="if(event.key===\'Enter\') impersonate(this.value)"><button class="btn btn-primary" onclick="impersonate(document.getElementById(\'impEmp\').value)">View as</button></div><div id="impResult" style="margin-top:16px"></div>';}
+
+function impersonate(emp){
+  if(!emp)return toast('Enter an emp code','warn');
+  google.script.run.withSuccessHandler(function(target){
+    var rows='';var up=target.upcoming||[];
+    for(var i=0;i<up.length;i++)rows+='<div class="entry '+(up[i].priority||'').toLowerCase()+(up[i].overdue?' overdue':'')+'"><div class="entry-head"><span class="entry-case">#'+escape_(up[i].caseNo)+'</span><span class="muted">'+up[i].cbDate+' \u00B7 '+up[i].cbTime+'</span></div><div class="entry-meta">'+up[i].priority+' \u00B7 '+escape_(up[i].reason||'')+'</div></div>';
+    document.getElementById('impResult').innerHTML='<div class="card" style="margin:0"><h3>Viewing as: '+escape_(target.name)+' ('+target.emp+')</h3><p class="muted">'+escape_(target.designation)+' \u00B7 '+escape_(target.lob)+'</p><h3 style="margin-top:14px">Upcoming queue</h3><div class="list">'+(rows||'<div class="empty">No pending</div>')+'</div></div>';
+  }).withFailureHandler(function(err){toast(err.message,'error');}).adminImpersonate(state.user.emp,emp.trim());
+}
+
+function renderExportHTML(){var today=new Date().toISOString().substring(0,10);var wa=new Date(Date.now()-7*86400000).toISOString().substring(0,10);return '<h3>CSV export (your scope)</h3><p class="muted" style="margin-bottom:14px">Export rows within date range and your scope.</p><div class="two-col"><div><label>From</label><input id="expFrom" type="date" value="'+wa+'"></div><div><label>To</label><input id="expTo" type="date" value="'+today+'"></div></div><div class="action-row"><button class="btn btn-primary" onclick="doExport()">Download CSV</button></div>';}
+function doExport(){var from=document.getElementById('expFrom').value;var to=document.getElementById('expTo').value;toast('Generating CSV\u2026','ok');google.script.run.withSuccessHandler(function(csv){var b=new Blob([csv],{type:'text/csv;charset=utf-8'});var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;a.download='cms_export_'+from+'_'+to+'.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);toast('Downloaded.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminExportCSV(state.user.emp,from,to);}
+
+function loadCredentials(){google.script.run.withSuccessHandler(function(rows){state.credentials=rows;renderCredentialsHTML();}).withFailureHandler(function(err){document.getElementById('adminTabHost').innerHTML='<div class="empty">Failed: '+escape_(err.message)+'</div>';}).adminListCredentials(state.user.emp);}
+
+function renderCredentialsHTML(){
+  var rows=state.credentials||[];var host=document.getElementById('adminTabHost');
+  if(!rows.length){host.innerHTML='<div class="empty">No admin users.</div>';return;}
+  var body='';
+  for(var i=0;i<rows.length;i++){
+    var c=rows[i];
+    var pw=c.passwordSet?'<span class="chip chip-ok">Set</span>':'<span class="chip chip-warn">Not set</span>';
+    var lk=c.locked?'<span class="chip chip-bad">Locked until '+escape_(c.lockedUntil)+'</span>':(c.failedAttempts?'<span class="chip chip-warn">'+c.failedAttempts+' fails</span>':'');
+    var acts='';
+    if(c.passwordSet)acts+='<button class="btn btn-ghost btn-sm" onclick="adminResetPasswordConfirm(\''+c.emp+'\',\''+escape_(c.name).replace(/'/g,'&#39;')+'\')">Reset</button>';
+    if(c.locked)acts+='<button class="btn btn-ok btn-sm" onclick="adminUnlockConfirm(\''+c.emp+'\',\''+escape_(c.name).replace(/'/g,'&#39;')+'\')">Unlock</button>';
+    var rc=c.role==='TL'?'chip-tl':c.role==='TM'?'chip-tm':c.role==='WFM'?'chip-wfm':'';
+    body+='<tr><td><b>'+escape_(c.name)+'</b><div class="muted" style="font-size:11px">'+c.emp+'</div></td><td><span class="chip '+rc+'">'+c.role+'</span></td><td>'+escape_(c.lob||'')+'</td><td>'+pw+'</td><td>'+escape_(c.lastLogin||'\u2014')+'</td><td>'+lk+'</td><td>'+(acts||'<span class="muted" style="font-size:11px">\u2014</span>')+'</td></tr>';
+  }
+  host.innerHTML='<h3>Admin credentials</h3><p class="muted" style="margin-bottom:12px">Reset forces new password on next login. All actions are audit-logged.</p><div class="tbl-wrap"><table class="data"><thead><tr><th>Name</th><th>Role</th><th>LOB</th><th>Password</th><th>Last Login</th><th>Status</th><th>Actions</th></tr></thead><tbody>'+body+'</tbody></table></div><div style="margin-top:12px"><button class="btn btn-ghost btn-sm" onclick="loadCredentials()">\u21BB Refresh</button></div>';
+}
+function adminResetPasswordConfirm(emp,name){showPromptModal('Reset password for '+name+'?','Type "RESET" to confirm:','',function(v){if(String(v).trim().toUpperCase()!=='RESET'){toast('Cancelled.','warn');return;}google.script.run.withSuccessHandler(function(res){toast(res.message||'Password reset.','ok');loadCredentials();}).withFailureHandler(function(err){toast(err.message,'error');}).adminResetPassword(state.user.emp,emp);});}
+function adminUnlockConfirm(emp,name){google.script.run.withSuccessHandler(function(){toast('Unlocked '+name+'.','ok');loadCredentials();}).withFailureHandler(function(err){toast(err.message,'error');}).adminUnlockAccount(state.user.emp,emp);}
+
+function openChangePasswordModal(){
+  openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>Change your password</h3><label>Current Password</label><input id="cpCurrent" type="password" autocomplete="current-password"><label>New Password</label><input id="cpNew" type="password" autocomplete="new-password" placeholder="Min 8 chars, letters + numbers"><label>Confirm New Password</label><input id="cpConfirm" type="password" autocomplete="new-password" onkeydown="if(event.key===\'Enter\') submitChangePassword()"><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="submitChangePassword()">Update Password</button></div></div></div>');
+  setTimeout(function(){document.getElementById('cpCurrent').focus();},50);
+}
+function submitChangePassword(){
+  var cur=document.getElementById('cpCurrent').value;var nw=document.getElementById('cpNew').value;var cf=document.getElementById('cpConfirm').value;
+  if(!cur)return toast('Enter current password.','warn');
+  if(!nw)return toast('Enter new password.','warn');
+  if(nw!==cf)return toast('Passwords do not match.','warn');
+  if(nw.length<8)return toast('Min 8 characters.','warn');
+  if(!/[a-zA-Z]/.test(nw)||!/[0-9]/.test(nw))return toast('Must contain letters and numbers.','warn');
+  google.script.run.withSuccessHandler(function(){closeModal();toast('Password updated.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).changeMyPassword(state.user.emp,cur,nw);
+}
+
+
+
+// NOTIFICATIONS
+function loadNotificationTargets(){
+  if(!state.user||state.user.role==='QA')return;
+  google.script.run.withSuccessHandler(function(t){state.notifTargets=t;}).withFailureHandler(function(){}).getNotificationTargets(state.user.emp);
+}
+function startNotificationPoller(){if(state.notifPoller)clearInterval(state.notifPoller);pollForNotifications();state.notifPoller=setInterval(pollForNotifications,30000);}
+function pollForNotifications(){
+  if(!state.user)return;
+  google.script.run.withSuccessHandler(function(notifs){
+    if(!notifs||!notifs.length)return;
+    for(var i=0;i<notifs.length;i++){
+      var n=notifs[i];
+      if(state.shownNotifs[n.notifId])continue;
+      state.shownNotifs[n.notifId]=Date.now();
+      displayIncomingNotification(n);
+      google.script.run.withSuccessHandler(function(){}).withFailureHandler(function(){}).markNotificationRead(state.user.emp,n.notifId);
+    }
+    var co=Date.now()-172800000;var keys=Object.keys(state.shownNotifs);
+    for(var j=0;j<keys.length;j++){if(state.shownNotifs[keys[j]]<co)delete state.shownNotifs[keys[j]];}
+    localStorage.setItem('cms_shown_notifs',JSON.stringify(state.shownNotifs));
+  }).withFailureHandler(function(){}).pollNotifications(state.user.emp,'');
+}
+function displayIncomingNotification(n){
+  try{if(typeof Notification!=='undefined' && Notification.permission==='granted')new Notification(n.title||('Message from '+n.senderName),{body:n.body||'',tag:n.notifId});}catch(e){}
+  toast('\uD83D\uDCE8 '+(n.title||'Message')+' \u2014 from '+n.senderName,'ok');
+  var b=document.getElementById('notifBellCount');b.textContent=String((parseInt(b.textContent||'0')||0)+1);b.style.display='inline-block';
+  state.recentNotifs.unshift(n);if(state.recentNotifs.length>20)state.recentNotifs.length=20;
+}
+function openSendNotificationModal(){
+  var b=document.getElementById('notifBellCount');b.textContent='0';b.style.display='none';
+  var t=state.notifTargets;
+  if(!t){toast('Targets still loading.','warn');loadNotificationTargets();return;}
+  var tOpts='';
+  if(t.canSendTo)for(var i=0;i<t.canSendTo.length;i++)tOpts+='<option value="'+t.canSendTo[i].type+'::'+escape_(t.canSendTo[i].value)+'" '+(i===0?'selected':'')+'>'+escape_(t.canSendTo[i].label)+'</option>';
+  var iOpts='';
+  if(t.role==='TL'&&t.teamMembers)for(var j=0;j<t.teamMembers.length;j++)iOpts+='<option value="emp::'+t.teamMembers[j].emp+'">'+escape_(t.teamMembers[j].name)+' ('+t.teamMembers[j].emp+')</option>';
+  else if(t.role==='TM'&&t.chainMembers)for(var k=0;k<t.chainMembers.length;k++)iOpts+='<option value="emp::'+t.chainMembers[k].emp+'">'+escape_(t.chainMembers[k].name)+' ('+t.chainMembers[k].emp+') \u00B7 '+escape_(t.chainMembers[k].role||'')+'</option>';
+  else if(t.role==='WFM'&&t.allPeople)for(var l=0;l<Math.min(t.allPeople.length,500);l++)iOpts+='<option value="emp::'+t.allPeople[l].emp+'">'+escape_(t.allPeople[l].name)+' ('+t.allPeople[l].emp+') \u00B7 '+escape_(t.allPeople[l].role||'')+'</option>';
+  var sNote={Agent:'You can only ping your supervisor.',TL:'Message your team, your manager, or a team member.',TM:'Message your TLs, your LOB, or a specific person.',WFM:'Broadcast to any scope \u2014 org-wide, role, LOB, or individual.'}[t.role]||'';
+  openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal" style="max-width:600px"><h3>\uD83D\uDCE8 Send a notification</h3><p class="muted" style="margin-bottom:14px;font-size:13px">'+escape_(sNote)+'</p><label>Send to</label><select id="notifTarget">'+(tOpts||'<option value="">(no targets)</option>')+(iOpts?'<optgroup label="Individual person">'+iOpts+'</optgroup>':'')+'</select><label>Title</label><input id="notifTitle" type="text" maxlength="100" placeholder="e.g. Maintenance at 5 PM"><label>Message</label><textarea id="notifBody" rows="3" maxlength="500" placeholder="Details..."></textarea><div class="hint" id="notifCharCount">0 / 500</div><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Close</button><button class="btn btn-primary" onclick="sendNotificationSubmit()">Send</button></div></div></div>');
+  setTimeout(function(){document.getElementById('notifBody').addEventListener('input',function(e){document.getElementById('notifCharCount').textContent=e.target.value.length+' / 500';});document.getElementById('notifTitle').focus();},50);
+}
+function sendNotificationSubmit(){
+  var raw=document.getElementById('notifTarget').value;if(!raw)return toast('Select a target.','warn');
+  var parts=raw.split('::');var tt=parts[0];var tv=parts[1];
+  var title=document.getElementById('notifTitle').value.trim();
+  var body=document.getElementById('notifBody').value.trim();
+  if(!title&&!body)return toast('Enter a title or message.','warn');
+  google.script.run.withSuccessHandler(function(res){closeModal();toast('Sent to ~'+res.recipientCount+' recipient(s).','ok');}).withFailureHandler(function(err){toast(err.message||'Failed.','error');}).sendNotification(state.user.emp,tt,tv,title,body);
+}
+function agentQuickPing(){
+  if(!state.notifTargets||!state.notifTargets.canSendTo||!state.notifTargets.canSendTo.length)return toast('No supervisor found. Contact WFM.','warn');
+  var target=state.notifTargets.canSendTo[0];
+  showPromptModal('\uD83C\uDD98 Ping your TL','Message (sends to '+target.label.replace('My TL:','').trim()+'):','',function(msg){
+    if(!msg)return toast('Message required.','warn');
+    google.script.run.withSuccessHandler(function(){toast('Ping sent to your TL.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).sendNotification(state.user.emp,target.type,target.value,'Help needed',msg);
+  });
+}
+
+// ADMIN ROW ACTIONS
+function adminDone(id){showPromptModal('Mark Completed','Outcome notes (optional):','',function(notes){google.script.run.withSuccessHandler(function(res){state.dashboard=res.dashboard;adminTab('entries');toast('Marked completed.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminMarkOutcome(state.user.emp,id,'Completed',notes);});}
+function adminEditModal(entryId){
+  var e=null;for(var i=0;i<state.dashboard.entries.length;i++){if(state.dashboard.entries[i].entryId===entryId){e=state.dashboard.entries[i];break;}}
+  if(!e)return;
+  openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>Edit entry</h3><label>Case Number</label><input id="eCase" value="'+escape_(e.caseNo)+'"><div class="two-col"><div><label>Date</label><input id="eDate" type="date" value="'+e.cbDate+'"></div><div><label>Time</label><input id="eTime" type="time" value="'+e.cbTime+'"></div></div><label>Priority</label><select id="ePrio"><option '+(e.priority==='Low'?'selected':'')+'>Low</option><option '+(e.priority==='Medium'?'selected':'')+'>Medium</option><option '+(e.priority==='High'?'selected':'')+'>High</option></select><label>Notes</label><textarea id="eNotes" rows="2">'+escape_(e.notes||'')+'</textarea><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="saveEdit(\''+entryId+'\')">Save</button></div></div></div>');
+}
+function saveEdit(id){var edits={caseNo:document.getElementById('eCase').value,cbDate:document.getElementById('eDate').value,cbTime:document.getElementById('eTime').value,priority:document.getElementById('ePrio').value,notes:document.getElementById('eNotes').value};closeModal();google.script.run.withSuccessHandler(function(res){state.dashboard=res.dashboard;adminTab('entries');toast('Saved.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminEditEntry(state.user.emp,id,edits);}
+function adminNudgeModal(id){showPromptModal('Nudge agent','Message to agent (emailed):','Please update the callback status.',function(msg){google.script.run.withSuccessHandler(function(){toast('Nudge sent.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminNudge(state.user.emp,id,msg);});}
+function adminReassignModal(entryId){
+  if(!state.roster.length){toast('Loading roster...','warn');loadRoster(function(){adminReassignModal(entryId);});return;}
+  var opts='';for(var i=0;i<state.roster.length;i++){var a=state.roster[i];opts+='<option value="'+a.emp+'">'+escape_(a.name)+' ('+a.emp+')'+(a.role&&a.role!=='Agent'?' ['+escape_(a.role)+']':'')+'</option>';}
+  openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>\u2194 Reassign callback</h3><label>New agent</label><select id="reAgent">'+opts+'</select><label>Message to agent <span style="font-weight:400;color:var(--mut)">(optional)</span></label><textarea id="reNote" rows="2" placeholder="e.g. Please action this urgently \u2014 customer has been waiting."></textarea><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="doReassign(\''+entryId+'\')">Reassign</button></div></div></div>');
+}
+function doReassign(id){
+  var emp=document.getElementById('reAgent').value;
+  var note=(document.getElementById('reNote')||{value:''}).value.trim();
+  closeModal();
+  google.script.run
+    .withSuccessHandler(function(res){state.dashboard=res.dashboard;adminTab('entries');toast('Reassigned \u2014 agent notified.','ok');})
+    .withFailureHandler(function(err){toast(err.message,'error');})
+    .adminReassignEntry(state.user.emp,id,emp,note);
+}
+function adminDeleteConfirm(id){showPromptModal('Delete entry \u2014 are you sure?','Enter reason for audit trail:','',function(reason){if(!reason)return toast('Reason required.','warn');google.script.run.withSuccessHandler(function(res){state.dashboard=res.dashboard;adminTab('entries');toast('Deleted.','warn');}).withFailureHandler(function(err){toast(err.message,'error');}).adminDeleteEntry(state.user.emp,id,reason);});}
+function refreshDashboard(){google.script.run.withSuccessHandler(function(d){state.dashboard=d;adminTab('dashboard');toast('Refreshed ('+(d.queryMs||0)+'ms).','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).refreshDashboard(state.user.emp,state.dashboardDays);}
+function loadRoster(cb){google.script.run.withSuccessHandler(function(r){state.roster=r;if(cb)cb();}).withFailureHandler(function(){}).getTeamRoster(state.user.emp);}
+
+// AGENT FORM
+function bindPriority(){
+  var btns=document.querySelectorAll('#prioSeg button');
+  for(var i=0;i<btns.length;i++){(function(b){b.onclick=function(){var all=document.querySelectorAll('#prioSeg button');for(var j=0;j<all.length;j++)all[j].classList.remove('active');b.classList.add('active');state.priorityAutoSet=false;};})(btns[i]);}
+}
+function getPriority(){var a=document.querySelector('#prioSeg button.active');return a?a.getAttribute('data-v'):'Medium';}
+function setPriority(v,fromAuto){var btns=document.querySelectorAll('#prioSeg button');for(var i=0;i<btns.length;i++)btns[i].classList.toggle('active',btns[i].getAttribute('data-v')===v);state.priorityAutoSet=!!fromAuto;}
+function bindTimeChips(){
+  function toLocal(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  var chips=document.querySelectorAll('#timeChips .chip-btn');
+  for(var i=0;i<chips.length;i++){(function(b){b.onclick=function(){
+    if(b.getAttribute('data-mins')){var t=new Date(Date.now()+Number(b.getAttribute('data-mins'))*60000);document.getElementById('cbDate').value=toLocal(t);document.getElementById('cbTime').value=String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');}
+    else if(b.getAttribute('data-tomorrow')){var t2=new Date(Date.now()+24*60*60000);document.getElementById('cbDate').value=toLocal(t2);document.getElementById('cbTime').value=b.getAttribute('data-tomorrow');}
+    updateTzConverter();
+  };})(chips[i]);}
+}
+var HIGH_REASONS=['Mediation','On-trip Issues','Bug update'];
+function onReasonChange(){
+  var r=document.getElementById('cbReason').value;
+  document.getElementById('notesReq').style.display=(r==='Other')?'inline':'none';
+  var h=HIGH_REASONS.indexOf(r)!==-1;
+  if(h&&(state.priorityAutoSet||getPriority()!=='High')){setPriority('High',true);var hint=document.getElementById('prioHint');hint.textContent='\u2191 Auto-bumped to High.';hint.style.display='block';}
+  else if(!h&&state.priorityAutoSet){setPriority('Medium',true);document.getElementById('prioHint').style.display='none';}
+  else document.getElementById('prioHint').style.display='none';
+}
+function bindKeyboard(){
+  document.addEventListener('keydown',function(e){
+    if(e.ctrlKey&&e.key==='Enter'&&state.user&&state.role==='Agent'){e.preventDefault();submitForm();}
+    if(e.key==='Escape'&&state.user&&state.role==='Agent')clearForm();
+  });
+}
+function submitForm(forceSubmit){
+  var caseNo=document.getElementById('caseNo').value.trim();var cbDate=document.getElementById('cbDate').value;
+  var cbTime=document.getElementById('cbTime').value;var reason=document.getElementById('cbReason').value;
+  var notes=document.getElementById('notes').value.trim();
+  if(!caseNo)return toast('Case number required','warn');
+  if(!cbDate)return toast('Date required','warn');
+  if(!cbTime)return toast('Time required','warn');
+  if(reason==='Other'&&!notes)return toast('Notes required when Reason is Other','warn');
+  if(new Date(cbDate+'T'+cbTime).getTime()<Date.now()-2*60000)return toast('Callback time is in the past','warn');
+  if(!forceSubmit){
+    var newMs=new Date(cbDate+'T'+cbTime).getTime();
+    for(var _i=0;_i<state.upcoming.length;_i++){
+      var _u=state.upcoming[_i];if(!_u.scheduled)continue;
+      var _diff=Math.abs(newMs-_u.scheduled)/60000;
+      if(_diff<10){
+        toast('There\'s already a callback for Case #'+escape_(_u.caseNo)+' at '+_u.cbTime+' ('+Math.round(_diff)+'m gap). Callbacks must be at least 10 minutes apart.','warn');
+        return;
+      }
+    }
+  }
+  var payload={emp:state.user.emp,caseNo:caseNo,cbDate:cbDate,cbTime:cbTime,priority:getPriority(),reason:reason,notes:notes,forceSubmit:!!forceSubmit};
+  if(!navigator.onLine){state.offlineQueue.push(payload);localStorage.setItem('cms_offline_queue',JSON.stringify(state.offlineQueue));updateQueueBadge();toast('Offline \u2014 queued.','warn');clearForm();return;}
+  var btn=document.getElementById('sBtn');setBusy(btn,true);
+  google.script.run
+    .withSuccessHandler(function(res){
+      setBusy(btn,false);
+      if(res&&res.duplicate){showDuplicateModal(res.message,function(){submitForm(true);});return;}
+      toast('Case #'+caseNo+' logged. ID: '+res.entryId,'ok');
+      document.getElementById('todayCount').textContent=(res.todayCount||0)+' today';
+      state.upcoming=res.upcoming||[];renderUpcoming();_touchSession();clearForm();
+    })
+    .withFailureHandler(function(err){setBusy(btn,false);toast(err.message||'Submit failed.','error');})
+    .submitEntry(payload);
+}
+function clearForm(){
+  document.getElementById('caseNo').value='';document.getElementById('cbTime').value='';document.getElementById('notes').value='';
+  document.getElementById('cbDate').valueAsDate=new Date();document.getElementById('cbReason').value='On-trip Issues';
+  setPriority('Medium',false);document.getElementById('prioHint').style.display='none';document.getElementById('notesReq').style.display='none';
+  var tz=document.getElementById('tzConvert');if(tz)tz.style.display='none';
+  document.getElementById('caseNo').focus();
+}
+function processOfflineQueue(){
+  if(!state.user||!navigator.onLine||!state.offlineQueue.length){updateQueueBadge();return;}
+  var next=state.offlineQueue[0];var payload=Object.assign({},next,{forceSubmit:true});
+  google.script.run.withSuccessHandler(function(){state.offlineQueue.shift();localStorage.setItem('cms_offline_queue',JSON.stringify(state.offlineQueue));updateQueueBadge();toast('Queued entry synced.','ok');if(state.offlineQueue.length)processOfflineQueue();}).withFailureHandler(function(err){state.offlineQueue.shift();localStorage.setItem('cms_offline_queue',JSON.stringify(state.offlineQueue));updateQueueBadge();toast('Queued entry failed: '+err.message,'error');}).submitEntry(payload);
+}
+function renderUpcoming(){
+  var host=document.getElementById('upcomingList');if(!host)return;
+  if(!state.upcoming.length){host.innerHTML='<div class="empty">\u2615 No upcoming callbacks.</div>';return;}
+  var html='';
+  for(var i=0;i<state.upcoming.length;i++){
+    var u=state.upcoming[i];
+    var cls=u.overdue?'overdue':u.priority.toLowerCase();
+    var cdClass=u.minsUntil<0?'now':u.minsUntil<=10?'soon':'';
+    var cdText=u.minsUntil<0?Math.abs(u.minsUntil)+'m overdue':u.minsUntil===0?'NOW':u.minsUntil<60?'in '+u.minsUntil+'m':'in '+Math.floor(u.minsUntil/60)+'h '+(u.minsUntil%60)+'m';
+    html+='<div class="entry '+cls+'"><div class="entry-head"><span class="entry-case">#'+escape_(u.caseNo)+'</span><span class="countdown '+cdClass+'">'+cdText+'</span></div><div class="entry-id-row"><span class="entry-id-label">Entry ID</span><span class="entry-id-chip">'+u.entryId+'</span><button class="entry-id-copy" onclick="copyEntryId(\''+u.entryId+'\')" title="Copy">&#9112;</button></div><div class="entry-meta">'+u.cbDate+' \u00B7 '+u.cbTime+' \u00B7 '+u.priority+' \u00B7 '+escape_(u.reason||'')+'</div>'+(u.notes?'<div class="entry-meta" style="margin-top:2px">'+escape_(u.notes)+'</div>':'')+'<div class="entry-actions"><button class="btn btn-ok btn-sm" onclick="markDone(\''+u.entryId+'\')">\u2713 Done</button><button class="btn btn-ghost btn-sm" onclick="markNoAnswer(\''+u.entryId+'\')">\u2717 No Answer</button><button class="btn btn-ghost btn-sm" onclick="reschedulePrompt(\''+u.entryId+'\')">\u21BB Reschedule</button><button class="btn btn-ghost btn-sm" onclick="markOthers(\''+u.entryId+'\')" title="Close - resolved by another agent or other reason">\u2026 Others</button></div></div>';
+  }
+  host.innerHTML=html;
+}
+function startCountdownTicker(){
+  if(state.countdownTicker)clearInterval(state.countdownTicker);
+  state.countdownTicker=setInterval(function(){var now=Date.now();for(var i=0;i<state.upcoming.length;i++){state.upcoming[i].minsUntil=Math.round((state.upcoming[i].scheduled-now)/60000);state.upcoming[i].overdue=state.upcoming[i].scheduled<now;}renderUpcoming();},30000);
+}
+function markDone(id){outcomeWithPrompt(id,'Completed','Outcome notes (optional):');}
+function markNoAnswer(id){
+  var ent=null;for(var i=0;i<state.upcoming.length;i++){if(state.upcoming[i].entryId===id){ent=state.upcoming[i];break;}}
+  var cl=ent?'Case #'+ent.caseNo:'this callback';
+  openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>\u2717 No Answer \u2014 '+escape_(cl)+'</h3><p class="muted" style="margin-bottom:14px;font-size:13px">The customer did not pick up. What would you like to do next?</p><div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"><button class="btn btn-primary" onclick="doNA(\''+id+'\',120)">\u21BB Re-schedule in 2 hours</button><button class="btn btn-ghost" onclick="doNA(\''+id+'\',240)">\u21BB Re-schedule in 4 hours</button><button class="btn btn-ghost" onclick="doNA(\''+id+'\',0)">\u2717 No Answer only (no reschedule)</button></div><button class="btn btn-ghost" style="width:100%" onclick="closeModal()">Cancel</button></div></div>');
+}
+function doNA(id,addMins){
+  closeModal();
+  var _caseNo=id;for(var _i=0;_i<state.upcoming.length;_i++){if(state.upcoming[_i].entryId===id){_caseNo=state.upcoming[_i].caseNo||id;break;}}
+  if(!addMins){google.script.run.withSuccessHandler(function(res){toast('Marked No Answer.','ok');state.upcoming=res.upcoming||[];renderUpcoming();_touchSession();}).withFailureHandler(function(e){toast(e.message,'error');}).markOutcome(state.user.emp,id,'NoAnswer','');return;}
+  var _last=state.rescheduleTracker[_caseNo];
+  if(_last&&Date.now()-_last<7200000){var _wait=Math.ceil((7200000-(Date.now()-_last))/60000);toast('Case #'+escape_(_caseNo)+' rescheduled recently. Try again in '+_wait+'m.','warn');return;}
+  var t=new Date(Date.now()+addMins*60000);
+  var d=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  var tm=String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');
+  google.script.run.withSuccessHandler(function(res){state.rescheduleTracker[_caseNo]=Date.now();toast('No Answer \u2014 rescheduled for '+tm+'.','ok');state.upcoming=res.upcoming||[];renderUpcoming();_touchSession();}).withFailureHandler(function(e){toast(e.message,'error');}).markOutcome(state.user.emp,id,'Rescheduled','Auto-rescheduled: no answer',{date:d,time:tm});
+}
+function outcomeWithPrompt(entryId,outcome,pt){
+  showPromptModal(outcome==='Completed'?'Mark Completed':'Mark No-Answer',pt,'',function(notes){
+    google.script.run.withSuccessHandler(function(res){toast('Marked as '+outcome+'.','ok');state.upcoming=res.upcoming||[];renderUpcoming();_touchSession();}).withFailureHandler(function(err){toast(err.message,'error');}).markOutcome(state.user.emp,entryId,outcome,notes);
+  });
+}
+function reschedulePrompt(entryId){
+  var _ent=null;for(var _i=0;_i<state.upcoming.length;_i++){if(state.upcoming[_i].entryId===entryId){_ent=state.upcoming[_i];break;}}
+  if(_ent){
+    var _key=_ent.caseNo||entryId;
+    var _last=state.rescheduleTracker[_key];
+    if(_last&&Date.now()-_last<7200000){
+      var _wait=Math.ceil((7200000-(Date.now()-_last))/60000);
+      var _wh=Math.floor(_wait/60),_wm=_wait%60;
+      toast('Case #'+escape_(_ent.caseNo)+' was rescheduled recently. Next reschedule in '+(_wh>0?_wh+'h ':'')+_wm+'m.','warn');
+      return;
+    }
+  }
+  var t=new Date(Date.now()+3600000);
+  var d=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  var tm=String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');
+  openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>Reschedule callback</h3><div class="two-col"><div><label>New Date</label><input id="__rDate" type="date" value="'+d+'"></div><div><label>New Time</label><input id="__rTime" type="time" value="'+tm+'"></div></div><label>Reason</label><textarea id="__rNotes" rows="2" placeholder="e.g. User requested later slot"></textarea><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="doResched(\''+entryId+'\')">Reschedule</button></div></div></div>');
+}
+function doResched(id){
+  var date=document.getElementById('__rDate').value;var time=document.getElementById('__rTime').value;var notes=document.getElementById('__rNotes').value;
+  if(!date||!time){toast('Pick date and time.','warn');return;}
+  var _caseNo=id;for(var _i=0;_i<state.upcoming.length;_i++){if(state.upcoming[_i].entryId===id){_caseNo=state.upcoming[_i].caseNo||id;break;}}
+  closeModal();
+  google.script.run.withSuccessHandler(function(res){
+    state.rescheduleTracker[_caseNo]=Date.now();
+    toast('Rescheduled \u2014 TL notified by email. Next reschedule in 2 hours.','ok');
+    state.upcoming=res.upcoming||[];renderUpcoming();_touchSession();
+  }).withFailureHandler(function(err){toast(err.message,'error');}).markOutcome(state.user.emp,id,'Rescheduled',notes,{date:date,time:time});
+}
+var historyDebounce;
+function debouncedSearch(){clearTimeout(historyDebounce);historyDebounce=setTimeout(searchHistory,300);}
+function searchHistory(){
+  var q=(document.getElementById('historyQuery')||{value:''}).value;
+  google.script.run.withSuccessHandler(function(rows){
+    var host=document.getElementById('historyList');if(!host)return;
+    if(!rows.length){host.innerHTML='<div class="empty">No matching entries.</div>';return;}
+    var h='';for(var i=0;i<rows.length;i++){var r=rows[i];h+='<div class="entry '+(r.priority||'').toLowerCase()+(r.status==='Completed'?' completed':'')+'"><div class="entry-head"><span class="entry-case">#'+escape_(r.caseNo)+'</span><span class="chip '+(r.status==='Completed'?'chip-ok':r.status==='Rescheduled'?'chip-warn':'')+'">'+r.status+(r.outcome?' \u00B7 '+r.outcome:'')+'</span></div><div class="entry-meta">'+r.cbDate+' '+r.cbTime+' \u00B7 '+r.priority+'</div>'+(r.notes?'<div class="entry-meta" style="margin-top:2px">'+escape_(r.notes)+'</div>':'')+'</div>';}
+    host.innerHTML=h;
+  }).withFailureHandler(function(err){toast(err.message,'error');}).searchMyHistory(state.user.emp,q);
+}
+function startReminderCheck(){
+  if(state.reminderPoller)clearInterval(state.reminderPoller);
+  state.reminderPoller=setInterval(function(){
+    var now=Date.now();
+    for(var i=0;i<state.upcoming.length;i++){var u=state.upcoming[i];var mins=Math.round((u.scheduled-now)/60000);if(mins>=4&&mins<=5&&!state.reminded[u.entryId]){state.reminded[u.entryId]=Date.now();localStorage.setItem('cms_reminded',JSON.stringify(state.reminded));showAlert(u);}}
+    var co=Date.now()-24*3600000;var keys=Object.keys(state.reminded);for(var j=0;j<keys.length;j++){if(state.reminded[keys[j]]<co)delete state.reminded[keys[j]];}
+  },30000);
+}
+function showAlert(u){
+  document.body.classList.add('flash-on');setTimeout(function(){document.body.classList.remove('flash-on');},3000);
+  if(typeof Notification!=='undefined' && Notification.permission==='granted')new Notification('\u23F0 Callback due in 5 min',{body:'Case #'+u.caseNo+' at '+u.cbTime,requireInteraction:true,tag:u.entryId});
+  toast('Case #'+u.caseNo+' \u00B7 5 min reminder','warn');
+}
+
+
+
+// BULK ACTIONS
+function bulkCheckChanged(){var cbs=document.querySelectorAll('.entry-cb:checked');var bar=document.getElementById('bulkBar');if(cbs.length){bar.className='bulk-bar show';}else{bar.className='bulk-bar';}document.getElementById('bulkCount').textContent=cbs.length+' selected';var tot=document.querySelectorAll('.entry-cb').length;var allCb=document.getElementById('bulkAll');if(allCb)allCb.checked=(cbs.length===tot&&tot>0);}
+function bulkToggleAll(cb){var cbs=document.querySelectorAll('.entry-cb');for(var i=0;i<cbs.length;i++)cbs[i].checked=cb.checked;bulkCheckChanged();}
+function bulkClear(){var cbs=document.querySelectorAll('.entry-cb');for(var i=0;i<cbs.length;i++)cbs[i].checked=false;var allCb=document.getElementById('bulkAll');if(allCb)allCb.checked=false;document.getElementById('bulkBar').className='bulk-bar';}
+function getBulkSelected(){var ids=[];var cbs=document.querySelectorAll('.entry-cb:checked');for(var i=0;i<cbs.length;i++)ids.push(cbs[i].getAttribute('data-id'));return ids;}
+function bulkComplete(){var ids=getBulkSelected();if(!ids.length)return toast('Select at least one entry.','warn');showPromptModal('Bulk Complete \u2014 '+ids.length+' entries','Outcome notes (optional):','',function(notes){toast('Processing\u2026','ok');google.script.run.withSuccessHandler(function(res){state.dashboard=res.dashboard;adminTab('entries');toast('Marked '+ids.length+' entries completed.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminBulkMarkOutcome(state.user.emp,ids,'Completed',notes);});}
+function bulkReassignModal(){var ids=getBulkSelected();if(!ids.length)return toast('Select at least one entry.','warn');if(!state.roster.length){toast('Loading roster\u2026','warn');loadRoster(function(){bulkReassignModal();});return;}var opts='';for(var i=0;i<state.roster.length;i++){var a=state.roster[i];opts+='<option value="'+a.emp+'">'+escape_(a.name)+' ('+a.emp+')</option>';}openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>Bulk Reassign \u2014 '+ids.length+' entries</h3><label>New agent</label><select id="bulkReAgent">'+opts+'</select><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="doBulkReassign('+JSON.stringify(ids)+')">Reassign All</button></div></div></div>');}
+function doBulkReassign(ids){var emp=document.getElementById('bulkReAgent').value;closeModal();toast('Processing\u2026','ok');google.script.run.withSuccessHandler(function(res){state.dashboard=res.dashboard;adminTab('entries');toast('Reassigned '+ids.length+' entries.','ok');}).withFailureHandler(function(err){toast(err.message,'error');}).adminBulkReassign(state.user.emp,ids,emp);}
+
+// QA FLAG SYSTEM
+function openQAFlagModal(entryId){var ex=state.qaFlags&&state.qaFlags[entryId];var ttl=ex?'Update flag \u2014 #'+entryId:'Flag entry for audit';openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>\uD83D\uDEA9 '+escape_(ttl)+'</h3><p class="muted" style="margin-bottom:12px;font-size:13px">Describe the audit concern. TL and WFM admins will see this flag.</p><label>Reason</label><textarea id="flagReason" rows="3" placeholder="e.g. Duplicate, missing notes, incorrect priority\u2026">'+escape_(ex?ex.reason:'')+'</textarea>'+(ex?'<div class="action-row"><button class="btn btn-ghost" onclick="clearQAFlag(\''+entryId+'\')">Remove Flag</button><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="submitQAFlag(\''+entryId+'\')">Update</button></div>':'<div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="submitQAFlag(\''+entryId+'\')">Submit Flag</button></div>')+'</div></div>');setTimeout(function(){var el=document.getElementById('flagReason');if(el)el.focus();},50);}
+function submitQAFlag(entryId){var reason=document.getElementById('flagReason').value.trim();if(!reason)return toast('Enter a reason.','warn');closeModal();if(!state.qaFlags)state.qaFlags={};state.qaFlags[entryId]={reason:reason};google.script.run.withSuccessHandler(function(){toast('\uD83D\uDEA9 Flag saved.','ok');renderQAEntriesTable();}).withFailureHandler(function(err){toast(err.message,'error');}).qaFlagEntry(state.user.emp,entryId,reason);}
+function clearQAFlag(entryId){closeModal();if(state.qaFlags)delete state.qaFlags[entryId];google.script.run.withSuccessHandler(function(){toast('Flag removed.','ok');renderQAEntriesTable();}).withFailureHandler(function(err){toast(err.message,'error');}).qaFlagEntry(state.user.emp,entryId,'');}
+
+// REASSIGN ACKNOWLEDGEMENT
+function checkPendingReassigns(){
+  var pr=state.pendingReassigns||[];
+  var banner=document.getElementById('pendingReassignBanner');
+  if(!banner){return;}
+  if(!pr.length){banner.style.display='none';return;}
+  var cards='';
+  for(var i=0;i<pr.length;i++){
+    var r=pr[i];
+    cards+='<div class="reassign-card">'+
+      '<div class="reassign-card-head">'+
+      '<span class="entry-case">#'+escape_(r.caseNo)+'</span>'+
+      '<span class="chip">'+r.priority+'</span>'+
+      '<span class="muted" style="font-size:11px">'+r.cbDate+' '+r.cbTime+'</span>'+
+      '</div>'+
+      '<div class="muted" style="font-size:12px;margin:4px 0">'+escape_(r.reason||'')+(r.fromName?' \u2014 reassigned by <b>'+escape_(r.fromName)+'</b>':'')+' \u00B7 '+escape_(r.lob||'')+'</div>'+
+      (r.note?'<div style="font-size:12px;padding:6px 10px;background:var(--hov);border-radius:6px;margin:6px 0;font-style:italic">\u201C'+escape_(r.note)+'\u201D</div>':'')+
+      '<div class="reassign-card-actions">'+
+      '<button class="btn btn-ok btn-sm" onclick="ackReassign(\''+r.entryId+'\',true)">\u2713 Accept</button>'+
+      '<button class="btn btn-ghost btn-sm" onclick="ackReassign(\''+r.entryId+'\',false)">\u2717 Decline</button>'+
+      '</div></div>';
+  }
+  banner.style.display='block';
+  banner.innerHTML='<div class="reassign-banner">'+
+    '<div class="reassign-banner-head">'+
+    '<span style="font-weight:700">\uD83D\uDCCB '+pr.length+' callback'+(pr.length>1?'s':'')+' reassigned to you</span>'+
+    '<span class="muted" style="font-size:12px">Review and accept or decline each one</span>'+
+    '</div>'+cards+'</div>';
+}
+function ackReassign(entryId,accept){
+  if(!accept){
+    showPromptModal('Decline reassignment','Reason for declining (required):','',function(reason){
+      if(!reason)return toast('Please enter a reason.','warn');
+      _doAck(entryId,false,reason);
+    });
+    return;
+  }
+  _doAck(entryId,true,'');
+}
+function _doAck(entryId,accept,reason){
+  google.script.run
+    .withSuccessHandler(function(res){
+      state.pendingReassigns=(state.pendingReassigns||[]).filter(function(r){return r.entryId!==entryId;});
+      if(accept&&res.upcoming){state.upcoming=res.upcoming;renderUpcoming();}
+      checkPendingReassigns();
+      toast(accept?'Callback accepted and added to your queue.':'Reassignment declined.','ok');
+    })
+    .withFailureHandler(function(err){toast(err.message,'error');})
+    .agentAckReassign(state.user.emp,entryId,accept,reason);
+}
+
+// TIMEZONE CONVERTER
+function updateTzConverter(){
+  var dateEl=document.getElementById('cbDate');
+  var timeEl=document.getElementById('cbTime');
+  var out=document.getElementById('tzConvert');
+  if(!out)return;
+  if(!timeEl||!timeEl.value||!dateEl||!dateEl.value){out.style.display='none';return;}
+  var istMs=new Date(dateEl.value+'T'+timeEl.value+':00').getTime();
+  if(isNaN(istMs)){out.style.display='none';return;}
+  var utcMs=istMs-330*60000;
+  function pad(n){return n<10?'0'+n:String(n);}
+  var chips='';
+  TZ_CONFIG.forEach(function(z){
+    if(z.off===330)return;
+    var d=new Date(utcMs+z.off*60000);
+    chips+='<span class="tz-convert-chip" title="'+z.note+'"><span class="tz-label">'+z.label+'</span><span class="tz-time">'+pad(d.getUTCHours())+':'+pad(d.getUTCMinutes())+'</span></span>';
+  });
+  out.innerHTML='<span class="tz-convert-label">That time in:</span>'+chips;
+  out.style.display='flex';
+}
+
+// OTHERS / CLOSED BY ANOTHER AGENT
+function markOthers(id){
+  var ent=null;for(var i=0;i<state.upcoming.length;i++){if(state.upcoming[i].entryId===id){ent=state.upcoming[i];break;}}
+  var cl=ent?'Case #'+escape_(ent.caseNo):'this callback';
+  openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>\u2716 Close callback \u2014 '+cl+'</h3><p class="muted" style="margin-bottom:12px;font-size:13px">Use this when the case is resolved but not by you directly. The callback will be marked <b>Completed</b>.</p><div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"><button class="btn btn-primary" onclick="doOthers(\''+id+'\',\'Customer called back early \u2014 issue resolved by another agent\')">Customer called back early, resolved by another agent</button><button class="btn btn-ghost" onclick="doOthers(\''+id+'\',\'Issue resolved via another channel\')">Resolved via another channel (chat, email, etc.)</button><button class="btn btn-ghost" onclick="doOthers(\''+id+'\',\'Duplicate callback \u2014 case already closed\')">Duplicate \u2014 case already closed</button></div><label>Or type a custom reason:</label><div style="display:flex;gap:8px;margin-top:4px"><input id="othersCustom" type="text" placeholder="e.g. Escalated to Level 2 team" style="flex:1"><button class="btn btn-ok btn-sm" onclick="doOthers(\''+id+'\',document.getElementById(\'othersCustom\').value)">Close</button></div><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()" style="margin-top:8px">Cancel</button></div></div></div>');
+  setTimeout(function(){var el=document.getElementById('othersCustom');if(el)el.focus();},50);
+}
+function doOthers(id,reason){
+  var r=String(reason||'').trim();
+  if(!r)return toast('Please enter a reason.','warn');
+  closeModal();
+  google.script.run
+    .withSuccessHandler(function(res){toast('Closed \u2014 TL notified by email.','ok');state.upcoming=res.upcoming||[];renderUpcoming();_touchSession();})
+    .withFailureHandler(function(err){toast(err.message,'error');})
+    .markOutcome(state.user.emp,id,'Completed',r);
+}
+
+// Copy Entry ID to clipboard
+function copyEntryId(id){
+  if(!id)return;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(id).then(function(){toast('Entry ID '+id+' copied!','ok');}).catch(function(){_fallbackCopy(id);});
+  } else {
+    _fallbackCopy(id);
+  }
+}
+function _fallbackCopy(text){
+  var ta=document.createElement('textarea');
+  ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');toast('Entry ID '+text+' copied!','ok');}catch(e){toast('Copy failed \u2014 please copy manually','warn');}
+  document.body.removeChild(ta);
+}
+
+// EARLY RESOLUTION
+var _earlySearchResult = null;
+
+function openEarlyResolveModal(){
+  _earlySearchResult = null;
+  openModal(
+    '<div class="modal-backdrop" onclick="if(event.target===this)closeModal()">' +
+    '<div class="modal" style="max-width:480px">' +
+    '<h3>&#8599; Customer Called In Early</h3>' +
+    '<p class="muted" style="margin-bottom:14px;font-size:13px">' +
+    'Use this when a customer calls in <b>before</b> their scheduled callback time ' +
+    'and you handle it. The original agent\'s pending entry will be automatically closed ' +
+    'and a new completed entry will be created under your name.' +
+    '</p>' +
+    '<label>Case Number <span class="req">*</span></label>' +
+    '<div style="display:flex;gap:8px;margin-bottom:12px">' +
+    '<input id="earlyCaseNo" type="text" placeholder="e.g. CAS-007821" style="flex:1" ' +
+    'onkeydown="if(event.key===\'Enter\')searchEarlyCase()">' +
+    '<button class="btn btn-ghost btn-sm" onclick="searchEarlyCase()">Search</button>' +
+    '</div>' +
+    '<div id="earlySearchResult" style="margin-bottom:12px"></div>' +
+    '<label>Your note (optional)</label>' +
+    '<input id="earlyNote" type="text" placeholder="e.g. Customer called in early, issue resolved" style="margin-bottom:14px">' +
+    '<div class="action-row">' +
+    '<button class="btn btn-ghost" onclick="closeModal()">Cancel</button>' +
+    '<button class="btn btn-primary" id="earlyConfirmBtn" onclick="confirmEarlyResolve()" disabled>Confirm &amp; Close</button>' +
+    '</div>' +
+    '</div></div>'
+  );
+  setTimeout(function(){ var el=document.getElementById('earlyCaseNo'); if(el)el.focus(); },80);
+}
+
+function searchEarlyCase(){
+  var caseNo = (document.getElementById('earlyCaseNo')||{value:''}).value.trim();
+  var out    = document.getElementById('earlySearchResult');
+  var btn    = document.getElementById('earlyConfirmBtn');
+  if(!caseNo){ if(out)out.innerHTML='<p class="muted" style="font-size:12px">Please enter a case number.</p>'; return; }
+  if(out) out.innerHTML='<p class="muted" style="font-size:12px">Searching...</p>';
+  if(btn) btn.disabled = true;
+  _earlySearchResult = null;
+  google.script.run
+    .withSuccessHandler(function(res){
+      if(!res.ok && res.notFound){
+        if(out) out.innerHTML='<p style="color:var(--err);font-size:13px">\u2716 No pending callback found for Case #'+escape_(caseNo)+'. It may already be completed.</p>';
+        return;
+      }
+      if(!res.ok){
+        if(out) out.innerHTML='<p style="color:var(--err);font-size:13px">\u2716 '+escape_(res.message||'Error')+'</p>';
+        return;
+      }
+      _earlySearchResult = res;
+      if(out) out.innerHTML=
+        '<div class="early-found-box">' +
+        '<div class="ef-label">Found pending entry</div>' +
+        '<div class="ef-val">Case #'+escape_(res.caseNo)+'</div>' +
+        '<div style="margin-top:6px;font-size:12px;color:var(--mut)">' +
+        'Original agent: <b>'+escape_(res.origAgent)+'</b> &nbsp;\u00B7&nbsp; ' +
+        'Scheduled: <b>'+escape_(res.origDate)+' at '+escape_(res.origTime)+'</b>' +
+        '</div>' +
+        '<div style="margin-top:4px;font-size:12px;color:var(--ok)">\u2713 This entry will be closed and a new entry logged under your name.</div>' +
+        '</div>';
+      if(btn) btn.disabled = false;
+    })
+    .withFailureHandler(function(err){ if(out) out.innerHTML='<p style="color:var(--err);font-size:13px">'+escape_(err.message)+'</p>'; })
+    .searchPendingByCaseNo(state.user.emp, caseNo);
+}
+
+function confirmEarlyResolve(){
+  if(!_earlySearchResult){ toast('Please search for the case number first.','warn'); return; }
+  var caseNo = (document.getElementById('earlyCaseNo')||{value:''}).value.trim();
+  var note   = (document.getElementById('earlyNote')||{value:''}).value.trim();
+  var btn    = document.getElementById('earlyConfirmBtn');
+  if(btn){ btn.disabled=true; btn.textContent='Processing...'; }
+  google.script.run
+    .withSuccessHandler(function(res){
+      closeModal();
+      if(res.ok){
+        toast('Done! Entry '+res.origEntryId+' ('+res.origAgent+') closed. New entry '+res.newEntryId+' created under your name.','ok');
+        state.upcoming = res.upcoming || [];
+        renderUpcoming();
+      } else {
+        toast(res.message||'Something went wrong.','error');
+      }
+    })
+    .withFailureHandler(function(err){ closeModal(); toast(err.message,'error'); })
+    .resolveEarlyByAnotherAgent(state.user.emp, caseNo, note);
+}
+
+// SESSION KEEPALIVE
+var _sessionTimer    = null;
+var _lastCallMs      = 0;
+var _sessionRefreshing = false;
+var SESSION_MAX_MS   = 5 * 60 * 60 * 1000;
+var SESSION_WARN_MS  = 4.5 * 60 * 60 * 1000;
+var _visibilityHandler = null;
+
+function startSessionKeepAlive() {
+  if (!state.user || !state.user.emp) return;
+  _lastCallMs = Date.now();
+  _updateSessionBadge('healthy', 'Session active');
+
+  if (_sessionTimer) clearInterval(_sessionTimer);
+  _sessionTimer = setInterval(function() {
+    if (!state.user) return;
+    var age = Date.now() - _lastCallMs;
+    if (age >= SESSION_MAX_MS) {
+      _silentReLogin();
+    } else if (age >= SESSION_WARN_MS) {
+      _updateSessionBadge('warning', 'Refreshing soon...');
+    }
+  }, 60000);
+
+  // Named handler so we can remove it before re-adding (prevents stacking on session restore)
+  if (_visibilityHandler) document.removeEventListener('visibilitychange', _visibilityHandler);
+  _visibilityHandler = function() {
+    if (document.visibilityState !== 'visible') return;
+    if (!state.user || !state.user.emp) return;
+    var age = Date.now() - _lastCallMs;
+    if (age >= SESSION_MAX_MS)   { _silentReLogin(); }
+    else if (age >= SESSION_WARN_MS) { _updateSessionBadge('warning', 'Click to refresh'); }
+  };
+  document.addEventListener('visibilitychange', _visibilityHandler);
+
+  var badge = document.getElementById('sessionBadge');
+  if (badge) badge.onclick = function() {
+    if (!_sessionRefreshing) _silentReLogin();
+  };
+}
+
+function _silentReLogin() {
+  if (!state.user || !state.user.emp || _sessionRefreshing) return;
+  _sessionRefreshing = true;
+  _updateSessionBadge('refreshing', 'Refreshing...');
+
+  var emp  = state.user.emp;
+  var role = state.user.role;
+
+  var runner = google.script.run
+    .withSuccessHandler(function(data) {
+      _sessionRefreshing = false;
+      _lastCallMs = Date.now();
+      if (data) {
+        if (data.upcoming)    { state.upcoming = data.upcoming; if (typeof renderUpcoming === 'function') renderUpcoming(); }
+        if (data.dashboard)   { state.dashboard = data.dashboard; }
+        if (data.todayCount !== undefined) {
+          var tc = document.getElementById('todayCount');
+          if (tc) tc.textContent = data.todayCount + ' / ' + (state.user.dailyTarget||8) + ' today';
+        }
+      }
+      _updateSessionBadge('healthy', 'Session refreshed');
+      setTimeout(function(){ _updateSessionBadge('healthy', 'Session active'); }, 3000);
+    })
+    .withFailureHandler(function(err) {
+      _sessionRefreshing = false;
+      _updateSessionBadge('warning', 'Tap to retry');
+      console.warn('Session refresh failed:', err.message);
+    });
+
+  if (role === 'Agent') {
+    runner.login(emp);
+  } else {
+    runner.refreshDashboard(emp);
+  }
+}
+
+function _touchSession() {
+  _lastCallMs = Date.now();
+  if (!_sessionRefreshing) _updateSessionBadge('healthy', 'Session active');
+}
+
+function _updateSessionBadge(stateName, text) {
+  var badge = document.getElementById('sessionBadge');
+  var label = document.getElementById('sbText');
+  if (!badge || !label) return;
+  badge.style.display = 'inline-flex';
+  badge.className = stateName;
+  label.textContent = text;
+}
+
+// UI PRIMITIVES
+function toast(msg,kind){
+  var el=document.createElement('div');el.className='toast '+(kind||'');
+  el.innerHTML='<div class="toast-title">'+(kind==='error'?'Error':kind==='warn'?'Notice':kind==='ok'?'Success':'Info')+'</div>'+escape_(msg);
+  document.getElementById('toastHost').appendChild(el);
+  setTimeout(function(){el.style.transition='opacity .3s';el.style.opacity='0';setTimeout(function(){el.remove();},300);},3800);
+}
+function showDuplicateModal(message,onConfirm){openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>Possible duplicate</h3><p class="muted" style="margin-bottom:14px">'+escape_(message)+'</p><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="closeModal();__cb()">Submit anyway</button></div></div></div>');window.__cb=onConfirm;}
+function showPromptModal(title,label,defaultVal,onOk){openModal('<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>'+escape_(title)+'</h3><label>'+escape_(label)+'</label><textarea id="__promptVal" rows="3">'+escape_(defaultVal)+'</textarea><div class="action-row"><button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="var v=document.getElementById(\'__promptVal\').value;closeModal();__cb(v)">Confirm</button></div></div></div>');window.__cb=onOk;setTimeout(function(){document.getElementById('__promptVal').focus();},50);}
+function openModal(html){document.getElementById('modalHost').innerHTML=html;}
+function closeModal(){document.getElementById('modalHost').innerHTML='';}
+function setBusy(btn,busy){btn.disabled=busy;var l=btn.querySelector('.btn-label');var s=btn.querySelector('.spinner');if(l)l.style.opacity=busy?'0.5':'1';if(s)s.style.display=busy?'inline-block':'none';}
+function initials(name){if(!name)return'\u2014';var p=name.split(/\s+/).slice(0,2);var r='';for(var i=0;i<p.length;i++)r+=p[i][0];return r.toUpperCase();}
+function escape_(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+</script>
+</body>
+</html>
